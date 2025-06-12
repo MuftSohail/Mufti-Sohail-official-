@@ -144,6 +144,72 @@
             cursor: pointer;
         }
         
+        /* تعارفی سیکشن */
+        .intro-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .intro-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .intro-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .intro-subtitle {
+            text-align: center;
+            color: var(--dark);
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+        }
+        
+        .intro-content {
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+        
+        .intro-content h2 {
+            color: var(--primary);
+            margin: 30px 0 15px;
+            font-size: 1.6rem;
+            border-right: 3px solid var(--secondary);
+            padding-right: 10px;
+        }
+        
+        .intro-content h3 {
+            color: var(--dark);
+            margin: 20px 0 10px;
+            font-size: 1.3rem;
+        }
+        
+        .intro-content ul {
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .intro-content li {
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            color: #8B0000;
+            font-weight: bold;
+        }
+        
+        .intro-signature {
+            text-align: left;
+            font-style: italic;
+            margin-top: 40px;
+            color: #666;
+        }
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(10, 95, 56, 0.8), rgba(10, 61, 31, 0.8)), url('https://images.unsplash.com/photo-1560421683-2588f3e620b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
@@ -152,7 +218,6 @@
             color: white;
             text-align: center;
             padding: 100px 20px;
-            margin-bottom: 40px;
         }
         
         .hero-content {
@@ -532,6 +597,14 @@
             .hero p {
                 font-size: 1.2rem;
             }
+            
+            .intro-title {
+                font-size: 2rem;
+            }
+            
+            .intro-subtitle {
+                font-size: 1.2rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -579,6 +652,14 @@
                 flex-direction: column;
                 gap: 15px;
             }
+            
+            .intro-content h2 {
+                font-size: 1.4rem;
+            }
+            
+            .intro-content h3 {
+                font-size: 1.2rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -592,6 +673,14 @@
             
             .section-title {
                 font-size: 1.8rem;
+            }
+            
+            .intro-title {
+                font-size: 1.8rem;
+            }
+            
+            .intro-subtitle {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -633,6 +722,89 @@
         </div>
     </header>
     
+    <!-- تعارفی سیکشن - اب ہیرو سے پہلے -->
+    <section class="intro-section">
+        <div class="intro-container">
+            <h1 class="intro-title">🌿 مفتی محمد سہیل خان شیرانی حفظہ اللہ</h1>
+            <h3 class="intro-subtitle">فاضلِ دارالعلوم کراچی، محقق العصر، مناظرِ اہلِ حق، مفسر و محدث، شیخ الحدیث</h3>
+            
+            <div class="intro-content">
+                <h2>ابتدائی تعارف</h2>
+                <p>مفتی محمد سہیل خان شیرانی حفظہ اللہ کا شمار پاکستان کے ان مخلص، باعمل، اور علم دوست علماء میں ہوتا ہے جنہوں نے دورِ حاضر کی علمی و فکری ضروریات کو سمجھتے ہوئے دیوبندی مسلک اور اہل السنۃ والجماعۃ کی صحیح ترجمانی کی۔ آپ قرآن و حدیث، فقہ و اصول، ردِ بدعت، مناظرہ و تحقیق اور تربیتِ طلبہ میں ممتاز مقام رکھتے ہیں۔</p>
+
+                <h2>نام و نسب</h2>
+                <ul>
+                    <li><span class="highlight">اصل نام:</span> دارو خان شیرانی</li>
+                    <li><span class="highlight">مروجہ نام:</span> مفتی محمد سہیل خان شیرانی</li>
+                    <li><span class="highlight">قوم و قبیلہ:</span> قبیلہ شیرانی، ضلع پشین، بلوچستان</li>
+                    <li><span class="highlight">وطن:</span> کلی خداے نور، ضلع پشین</li>
+                </ul>
+
+                <h2>تعلیمی پس منظر</h2>
+                <h3>عصری تعلیم:</h3>
+                <ul>
+                    <li>ابتدائی تعلیم: گورنمنٹ پرائمری سکول کلی خداے نور اور گریڈ کالونی</li>
+                    <li>میٹرک: گورنمنٹ ہائی سکول مچان</li>
+                    <li>انگلش و کمپیوٹر سائنس میں خصوصی مہارت</li>
+                </ul>
+
+                <h3>دینی تعلیم:</h3>
+                <ul>
+                    <li>جامعہ اسلامیہ مفتاح العلوم پشین سے عربی، منطق، تفسیر و اصول فقہ کی تعلیم</li>
+                    <li>شیخ الحدیث مولانا عطاء اللہ کے شاگرد</li>
+                </ul>
+
+                <h3>اعلیٰ تعلیم:</h3>
+                <ul>
+                    <li>جامعہ دارالعلوم کراچی سے دورہ حدیث</li>
+                    <li>اساتذہ: مفتی محمد تقی عثمانی، مفتی رفیع عثمانی</li>
+                    <li>تخصص فی الفقہ: جامعہ تعلیم القرآن بھٹوکالونی</li>
+                    <li>اسلامی بینکاری و ائمہ کورس: انٹرنیشنل اسلامک یونیورسٹی اسلام آباد</li>
+                </ul>
+
+                <h2>عصری علوم میں مہارت</h2>
+                <p>جدید تقاضوں کو مدنظر رکھتے ہوئے آپ نے آرٹیفیشل انٹیلیجنس کے پانچ اہم کورسز عالمی تعلیمی پلیٹ فارم <strong>Coursera</strong> پر مکمل کیے، جن پر آپ کو گوگل کی جانب سے <strong>پانچ سرٹیفیکیٹس</strong> اور بیج (Badges) سے نوازا گیا۔ مزید برآں، اردو اے آئی کی معروف <strong>ماسٹرکلاس</strong> میں شاندار کامیابی حاصل کر کے باقاعدہ <strong>سرٹیفیکیٹ</strong> حاصل کیا۔ یہ تمام کوششیں اس بات کا عملی ثبوت ہیں کہ آپ دینی اور عصری دونوں میدانوں میں رہنمائی کی صلاحیت رکھتے ہیں۔</p>
+
+                <h2>تدریسی خدمات</h2>
+                <p>آپ نے بخاری و مسلم جیسے اہم درسی متون پڑھائے۔ مختلف مدارس میں تفسیر، فقہ، حدیث اور اصول کی تدریس کی۔ تدریس میں ذہانت، سادگی اور مدلل انداز نمایاں ہے۔</p>
+
+                <h2>مناظرے و دعوت</h2>
+                <ul>
+                    <li>اہل بدعت بریلویہ کے ساتھ علمی مناظرے</li>
+                    <li>اشاعتیہ (پنجپیریہ) کے باطل نظریات پر مدلل رد</li>
+                    <li>عثمانی فرقے کے افکار و عقائد پر تحقیقی گفتگو</li>
+                </ul>
+
+                <h2>تصنیفی خدمات</h2>
+                <ul>
+                    <li><strong>التحقیقات لدفع التلبیسات:</strong> عبدالخالق سیفی بریلوی کے رد میں ایک عظیم علمی تصنیف</li>
+                    <li><strong>بدعتی کے پیچھے نماز کا مسئلہ:</strong> فقہی دلائل پر مشتمل مدلل رسالہ</li>
+                    <li><strong>عثمانی فرقے کے نظریات پر ایک نظر:</strong> ایک فتنۂ نوپید کا تفصیلی رد</li>
+                    <li><strong>سہام کرامات الاولیاء:</strong> عربی زبان میں نحوی و معنوی نقائص کی نشاندہی</li>
+                </ul>
+
+                <h2>شخصی خصوصیات</h2>
+                <p>آپ کی شخصیت علم و حلم، تقویٰ، انکساری اور دینی غیرت کا حسین امتزاج ہے۔ مناظروں میں سخت مگر مزاج میں نرم خو، محقق مزاج، اور سنت کے پابند عالم دین ہیں۔</p>
+
+                <h2>آن لائن علمی خدمات</h2>
+                <ul>
+                    <li><strong>فیس بک:</strong> Mufti Suhail Khan Sherani</li>
+                    <li><strong>ٹک ٹاک:</strong> @MuftiSuhailSherani</li>
+                    <li><strong>یوٹیوب:</strong> Islamic Informative</li>
+                </ul>
+
+                <h2>پیغامِ زندگی</h2>
+                <p>آپ کی زندگی تحقیق، تواضع، تقویٰ، دعوت، اور دفاعِ عقیدہ سے عبارت ہے۔ آپ نے علم کو شہرت کے بجائے امت کی خدمت کا ذریعہ بنایا۔</p>
+
+                <h2>اختتامی کلمات</h2>
+                <p>مفتی محمد سہیل خان شیرانی حفظہ اللہ دیوبندی مکتبِ فکر کی اُس علمی روایت کے امین ہیں جو قال اللہ، قال الرسول سے وابستہ ہے۔ دعا ہے کہ اللہ تعالیٰ آپ کی خدمات کو شرفِ قبولیت عطا فرمائے۔ آمین۔</p>
+                
+                <div class="intro-signature">
+                    <p>تحریر: ویب سائٹ ٹیم</p>
+                </div>
+            </div>
+        </div>
+    </section> 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -645,8 +817,7 @@
                 </div>
             </div>
         </div>
-    </section>
-    
+    </section>    
     <!-- Features Section -->
     <section class="features">
         <div class="container">
@@ -825,7 +996,7 @@
                         </div>
                         <div>
                             <h3>ہمارا پتہ</h3>
-                            <p>مسجد جامع، شیرانی روڈ، کوہاٹ، خیبر پختونخوا</p>
+                            <p> شیرانی کالونی کیڈٹ کالج روڈ،ضلع پشین صوبہ بلوچستان</p>
                         </div>
                     </div>
                     
@@ -834,9 +1005,9 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <h3>فون نمبر</h3>
-                            <p>+92 123 4567890</p>
-                            <p>+92 987 6543210</p>
+                            <h3>فون نمبر </h3>
+                            <p>+92 3033823350</p>
+                            <p>+92 3138004728</p>
                         </div>
                     </div>
                     
@@ -846,8 +1017,8 @@
                         </div>
                         <div>
                             <h3>ای میل</h3>
-                            <p>info@muftisohail.com</p>
-                            <p>support@muftisohail.com</p>
+                            <p>ksherani73@gmail.com</p>
+                            <p>daro99470@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -887,21 +1058,214 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>مفتی محمد سہیل خان شیرانی</h3>
-                    <p>ایک معروف اسلامی عالم، مفتی اور مصنف جن کی خدمات اسلامی علوم کی ترویج و اشاعت میں ناقابل فراموش ہیں۔</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                     <p>ایک معروف اسلامی عالم، مفتی اور مصنف جن کی خدمات اسلامی علوم کی ترویج و اشاعت میں ناقابل فراموش ہیں۔</p>
                 </div>
+                    <div class="social-links">
+    			<a href="https://www.facebook.com/share/16d3mTwmSE/" target="_blank">
+        		<i class="fab fa-facebook-f"></i>
+    			</a>
+    			<a href="#"><i class="fab fa-twitter"></i></a>
+    			<a href="https://youtube.com/@islamicinformative-t1x?si=J1Wi_DDwupFe-Qan" target="_blank">
+        		<i class="fab fa-youtube"></i>
+    			</a>
+    			<a href="#"><i class="fab fa-instagram"></i></a>
+    			<a href="https://whatsapp.com/channel/0029VasmUSCBA1eq29pJ0g1n" target="_blank">
+        		<i class="fab fa-whatsapp"></i>
+    			</a>
+                 </div>
                 
                 <div class="footer-col">
                     <h3>اہم لنکس</h3>
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-chevron-left"></i> ہوم پیج</a></li>
                         <li><a href="#"><i class="fas fa-chevron-left"></i> مفتی صاحب کا تعارف</a></li>
+			<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مفتی محمد سہیل خان شیرانی کا تعارف</title>
+  <style>
+    body {
+      font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+      background-color: #f9f9f9;
+      color: #222;
+      padding: 40px;
+      line-height: 2;
+      font-size: 20px;
+    }
+    h1, h2, h3 {
+      color: #006400;
+      text-align: center;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 26px;
+      margin-top: 40px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    ul {
+      padding-right: 30px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .highlight {
+      color: #8B0000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مفتی محمد سہیل خان شیرانی - اسلامی ویب سائٹ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <style>
+        /* تمام موجودہ CSS اسٹائلز یہاں رہیں گی */
+        
+        /* نیا اضافہ: تعارفی سیکشن کے لیے */
+        .intro-section {
+            background-color: white;
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .intro-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .intro-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .intro-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .intro-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .intro-content h2 {
+            color: var(--primary);
+            margin: 25px 0 15px;
+            font-size: 1.6rem;
+            border-right: 3px solid var(--secondary);
+            padding-right: 10px;
+        }
+        
+        .intro-content h3 {
+            color: var(--dark);
+            margin: 20px 0 10px;
+            font-size: 1.3rem;
+        }
+        
+        .intro-content ul {
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .intro-content li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .intro-signature {
+            text-align: left;
+            font-style: italic;
+            margin-top: 30px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .intro-title {
+                font-size: 1.8rem;
+            }
+            
+            .intro-content h2 {
+                font-size: 1.4rem;
+            }
+            
+            .intro-content h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مفتی محمد سہیل خان شیرانی کا تعارف</title>
+  <style>
+    body {
+      font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+      background-color: #f9f9f9;
+      color: #222;
+      padding: 40px;
+      line-height: 2;
+      font-size: 20px;
+    }
+    h1, h2, h3 {
+      color: #006400;
+      text-align: center;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 26px;
+      margin-top: 40px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    ul {
+      padding-right: 30px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .highlight {
+      color: #8B0000;
+      font-weight: bold;
+    }
+  </style>
+</head>
                         <li><a href="#"><i class="fas fa-chevron-left"></i> فتاویٰ جات</a></li>
                         <li><a href="#"><i class="fas fa-chevron-left"></i> ویڈیوز</a></li>
                         <li><a href="#"><i class="fas fa-chevron-left"></i> کتب</a></li>
