@@ -102,6 +102,11 @@
             padding: 10px 20px;
             border-radius: 0 5px 5px 0;
             cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search-bar button:hover {
+            background: #b38f2a;
         }
         
         nav {
@@ -128,6 +133,9 @@
             border-radius: 5px;
             transition: all 0.3s;
             font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         
         .nav-links a:hover {
@@ -258,6 +266,7 @@
             transition: all 0.3s;
             border: 2px solid var(--secondary);
             font-size: 1.1rem;
+            cursor: pointer;
         }
         
         .btn:hover {
@@ -335,6 +344,139 @@
             color: var(--primary);
         }
         
+        /* Media Section */
+        .media-section {
+            padding: 60px 0;
+            background-color: #f0f8ff;
+        }
+        
+        .media-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .media-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .media-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .media-header {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .media-content {
+            padding: 20px;
+        }
+        
+        .media-player {
+            width: 100%;
+            height: 200px;
+            background: #222;
+            position: relative;
+        }
+        
+        .media-title {
+            font-size: 1.3rem;
+            margin: 15px 0 10px;
+            color: var(--primary);
+        }
+        
+        .media-duration {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .media-description {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .media-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .view-all-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .view-all-btn:hover {
+            background: #0a4d2c;
+            transform: translateY(-3px);
+        }
+        
+        .media-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-btn {
+            padding: 10px 25px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            position: relative;
+            color: #555;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn.active {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .tab-btn.active::after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
         /* Fatawa Section */
         .fatawa {
             padding: 60px 0;
@@ -407,6 +549,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s;
             text-align: center;
+            cursor: pointer;
         }
         
         .book-card:hover {
@@ -660,6 +803,21 @@
             .intro-content h3 {
                 font-size: 1.2rem;
             }
+            
+            .media-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .media-player {
+                height: 180px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -699,24 +857,24 @@
                 </div>
                 
                 <div class="search-bar">
-                    <input type="text" placeholder="فتاویٰ تلاش کریں...">
-                    <button><i class="fas fa-search"></i></button>
+                    <input type="text" id="search-input" placeholder="فتاویٰ تلاش کریں...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
                 </div>
                 
-                <button class="mobile-menu-btn">
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
             
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#"><i class="fas fa-home"></i> ہوم</a></li>
-                    <li><a href="#"><i class="fas fa-book"></i> فتاویٰ جات</a></li>
-                    <li><a href="#"><i class="fas fa-book-open"></i> کتب</a></li>
-                    <li><a href="#"><i class="fas fa-video"></i> ویڈیوز</a></li>
+                    <li><a href="#fatawa"><i class="fas fa-book"></i> فتاویٰ جات</a></li>
+                    <li><a href="#books"><i class="fas fa-book-open"></i> کتب</a></li>
+                    <li><a href="#media"><i class="fas fa-video"></i> ویڈیوز</a></li>
                     <li><a href="#"><i class="fas fa-calendar-alt"></i> تقویم</a></li>
-                    <li><a href="#"><i class="fas fa-info-circle"></i> تعارف</a></li>
-                    <li><a href="#"><i class="fas fa-phone-alt"></i> رابطہ</a></li>
+                    <li><a href="https://example.com/blog" target="_blank"><i class="fas fa-blog"></i> بلاگ</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone-alt"></i> رابطہ</a></li>
                 </ul>
             </nav>
         </div>
@@ -725,7 +883,7 @@
     <!-- تعارفی سیکشن - اب ہیرو سے پہلے -->
     <section class="intro-section">
         <div class="intro-container">
-            <h1 class="intro-title"> مفتی محمد سہیل خان شیرانی  </h1>
+            <h1 class="intro-title">🌿 مفتی محمد سہیل خان شیرانی حفظہ اللہ</h1>
             <h3 class="intro-subtitle">فاضلِ دارالعلوم کراچی، محقق العصر، مناظرِ اہلِ حق، مفسر و محدث، شیخ الحدیث</h3>
             
             <div class="intro-content">
@@ -745,7 +903,7 @@
                 <ul>
                     <li>ابتدائی تعلیم: گورنمنٹ پرائمری سکول کلی خداے نور اور گریڈ کالونی</li>
                     <li>میٹرک: گورنمنٹ ہائی سکول مچان</li>
-                    <li>انگلش و کمپیوٹر سائنس،ارٹیفیشل اینٹلیجنس ،گرافک ڈیزائننگ اورویب ڈیزائننگ میں خصوصی مہارت</li>
+                    <li>انگلش و کمپیوٹر سائنس میں خصوصی مہارت</li>
                 </ul>
 
                 <h3>دینی تعلیم:</h3>
@@ -757,10 +915,9 @@
                 <h3>اعلیٰ تعلیم:</h3>
                 <ul>
                     <li>جامعہ دارالعلوم کراچی سے دورہ حدیث</li>
-                    <li> ،اساتذہ: مفتی محمد تقی عثمانی، مفتی رفیع عثمانی،مفتی محموداشرف عثمانی ،مولاناافتخاراعظمی،مولانارشیداشرف ،مفتی عبدالروف سکھروی،مفتی عزیز الرحمن</li>
+                    <li>اساتذہ: مفتی محمد تقی عثمانی، مفتی رفیع عثمانی</li>
                     <li>تخصص فی الفقہ: جامعہ تعلیم القرآن بھٹوکالونی</li>
-                    <li>اسلامی بینکاری و ائمہ کورس ازدعوہ اکیڈمی فیصل مسجدانٹرنیشنل اسلامک یونیورسٹی اسلام آباد</li>
-                    <li>جدیدمعیشت وتجارت کورس برائے مفتیان کرام ازشریعہ اکیڈمی انٹرنیشنل اسلامک یونیورسٹی اسلام آباد</li>
+                    <li>اسلامی بینکاری و ائمہ کورس: انٹرنیشنل اسلامک یونیورسٹی اسلام آباد</li>
                 </ul>
 
                 <h2>عصری علوم میں مہارت</h2>
@@ -778,9 +935,10 @@
 
                 <h2>تصنیفی خدمات</h2>
                 <ul>
-                    <li><strong>التحقیقات لدفع التلبیسات:</strong>  عبدالخالق سیفی بریلوی کے رد میں ایک عظیم علمی تصنیف جس پر پاک وہندکے مشہورمدارس ومفتیان کرام کی تائیدات موجودہے اورامارت اسلامیہ کی تائیدبھی اعلامیہ کی شکل میں جاری ہوجس میں موصوف کے تقاریزپرپابندی کاحکم جاری کیاگیا۔ </li>
+                    <li><strong>التحقیقات لدفع التلبیسات:</strong> عبدالخالق سیفی بریلوی کے رد میں ایک عظیم علمی تصنیف</li>
                     <li><strong>بدعتی کے پیچھے نماز کا مسئلہ:</strong> فقہی دلائل پر مشتمل مدلل رسالہ</li>
                     <li><strong>عثمانی فرقے کے نظریات پر ایک نظر:</strong> ایک فتنۂ نوپید کا تفصیلی رد</li>
+                    <li><strong>سہام کرامات الاولیاء:</strong> عربی زبان میں نحوی و معنوی نقائص کی نشاندہی</li>
                 </ul>
 
                 <h2>شخصی خصوصیات</h2>
@@ -804,7 +962,8 @@
                 </div>
             </div>
         </div>
-    </section> 
+    </section>
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -812,12 +971,13 @@
                 <h2>علم دین کی روشنی سے اپنی زندگی منور کریں</h2>
                 <p>مفتی محمد سہیل خان شیرانی کی معتبر اسلامی رہنمائی اور فتاویٰ جات تک رسائی حاصل کریں</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn">فتاویٰ تلاش کریں</a>
-                    <a href="#" class="btn btn-outline">ویڈیوز دیکھیں</a>
+                    <a href="#fatawa" class="btn">فتاویٰ تلاش کریں</a>
+                    <a href="#media" class="btn btn-outline">ویڈیوز دیکھیں</a>
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
+    
     <!-- Features Section -->
     <section class="features">
         <div class="container">
@@ -838,7 +998,7 @@
                     <h3>درس و تدریس ویڈیوز</h3>
                     <p>مفتی صاحب کے لیکچرز، خطبات اور دروس کی ویڈیو لائبریری</p>
                 </div>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/j-aYNyz4RgY?si=vyL2aDPP5o4N_nzA&amp;start=169" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-book"></i>
@@ -874,8 +1034,166 @@
         </div>
     </section>
     
+    <!-- Media Section -->
+    <section class="media-section" id="media">
+        <div class="container">
+            <h2 class="section-title">درس و تدریس</h2>
+            
+            <div class="media-tabs">
+                <button class="tab-btn active" data-tab="videos">ویڈیو لیکچرز</button>
+                <button class="tab-btn" data-tab="audios">آڈیو خطبات</button>
+            </div>
+            
+            <div class="tab-content active" id="videos-content">
+                <div class="media-container">
+                    <div class="media-card">
+                        <div class="media-header">
+                            <i class="fas fa-video"></i> ویڈیو لیکچر
+                        </div>
+                        <div class="media-player">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/j-aYNyz4RgY?si=9C9I3I6cSZEtQ9eh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">کیاریاست اورامیرکی اجازت کے بغیرجہادنہیں ہوسکتا</h3>
+                            <div class="media-duration">
+                                <i class="fas fa-clock"></i> دورانیہ: 5:28 منٹ
+                            </div>
+                            <p class="media-description">
+                               اس ویڈیو لیکچر میں مفتی صاحب نے جہاددفاعی پرروشنی ڈالی ہے کہ دفاعی جنگ میں ریاست ،فوج اورامیروغیرہ کی اجازت شرعاضروری نہیں اس لئے یہ مفتی عبدالرحیم کامغالطہ ہے۔۔
+                            </p>
+                            <div class="media-meta">
+                                <span><i class="fas fa-calendar"></i> 15 مئی 2025</span>
+                                <span><i class="fas fa-eye"></i> 12K دیکھے گئے</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="media-header">
+                            <i class="fas fa-video"></i> ویڈیو لیکچر
+                        </div>
+                        <div class="media-player">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JIraoRP23bA?si=VauY8F3TKPLy9KLS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">18سال سے کم عمری کی شادی کابل قرآن وسنت اورآئین پاکستان کے خلاف ہونے کاثبوت</h3>
+                            <div class="media-duration">
+                                <i class="fas fa-clock"></i> دورانیہ: 3:26 منٹ
+                            </div>
+                            <p class="media-description">
+                                18سال سے کم عمری کی شادی کابل قرآن وسنت اورآئین پاکستان کے خلاف ہونے  پر جامع گفتگو۔
+                            </p>
+                            <div class="media-meta">
+                                <span><i class="fas fa-calendar"></i> 2 جون 2025</span>
+                                <span><i class="fas fa-eye"></i> 8.7K دیکھے گئے</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="media-header">
+                            <i class="fas fa-video"></i> ویڈیو لیکچر
+                        </div>
+                        <div class="media-player">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/UCqJ6-rHGso?si=IxvZjUcFSvdORXWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">مرنے کےبعدعذاب قبرمیں جسم اورروح دونوں کوہوتاہے یاصرف روح کوعذاب وراحت ملتاہےاس موضوع مدلل ومحقق گفتگو</h3>
+                            <div class="media-duration">
+                                <i class="fas fa-clock"></i> دورانیہ: 12:38 منٹ
+                            </div>
+                            <p class="media-description">
+                                اسلامی بینکاری کے اصول، موجودہ چیلنجز اور مستقبل کے امکانات پر مفتی صاحب کا خصوصی لیکچر۔
+                            </p>
+                            <div class="media-meta">
+                                <span><i class="fas fa-calendar"></i> 20 جون 2023</span>
+                                <span><i class="fas fa-eye"></i> 15.3K دیکھے گئے</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="audios-content">
+                <div class="media-container">
+                    <div class="media-card">
+                        <div class="media-header">
+                            <i class="fas fa-headphones"></i> آڈیو خطبہ
+                        </div>
+                        <div class="media-player">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/D6Ac5JpCHmI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">تقویٰ کی اہمیت اور اس کے مراتب</h3>
+                            <div class="media-duration">
+                                <i class="fas fa-clock"></i> دورانیہ: 28 منٹ
+                            </div>
+                            <p class="media-description">
+                                اس آڈیو خطبہ میں مفتی صاحب نے تقویٰ کی تعریف، اہمیت اور اس کے مختلف درجات پر روشنی ڈالی ہے۔
+                            </p>
+                            <div class="media-meta">
+                                <span><i class="fas fa-calendar"></i> 10 مئی 2023</span>
+                                <span><i class="fas fa-headphones"></i> 5.4K سنا گیا</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="media-header">
+                            <i class="fas fa-headphones"></i> آڈیو خطبہ
+                        </div>
+                        <div class="media-player">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/UkWd0azv3fQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">قرآن فہمی کی ضرورت و اہمیت</h3>
+                            <div class="media-duration">
+                                <i class="fas fa-clock"></i> دورانیہ: 35 منٹ
+                            </div>
+                            <p class="media-description">
+                                قرآن مجید کو سمجھنے اور اس پر عمل کرنے کی اہمیت اور اس کے لیے درکار اصولوں پر روشنی ڈالی گئی ہے۔
+                            </p>
+                            <div class="media-meta">
+                                <span><i class="fas fa-calendar"></i> 25 مئی 2023</span>
+                                <span><i class="fas fa-headphones"></i> 7.2K سنا گیا</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="media-card">
+                        <div class="media-header">
+                            <i class="fas fa-headphones"></i> آڈیو خطبہ
+                        </div>
+                        <div class="media-player">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7cjVj1ZyzyE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="media-content">
+                            <h3 class="media-title">دعا کی قبولیت کے اوقات و شرائط</h3>
+                            <div class="media-duration">
+                                <i class="fas fa-clock"></i> دورانیہ: 32 منٹ
+                            </div>
+                            <p class="media-description">
+                                دعا کی قبولیت کے خاص اوقات، شرائط اور آداب کے بارے میں تفصیلی بیان۔
+                            </p>
+                            <div class="media-meta">
+                                <span><i class="fas fa-calendar"></i> 5 جون 2023</span>
+                                <span><i class="fas fa-headphones"></i> 9.1K سنا گیا</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://www.youtube.com/@IslamicInformative" target="_blank" class="view-all-btn">
+                    <i class="fas fa-list"></i> تمام ویڈیوز/آڈیوز دیکھیں
+                </a>
+            </div>
+        </div>
+    </section>
+    
     <!-- Fatawa Section -->
-    <section class="fatawa">
+    <section class="fatawa" id="fatawa">
         <div class="container">
             <h2 class="section-title">نمونہ فتاویٰ جات</h2>
             <div class="fatawa-container">
@@ -935,24 +1253,114 @@
             </div>
         </div>
     </section>
-    
+    <!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>کتب گیلری</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Nastaliq Urdu', 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .book-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .book-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-cover i {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .book-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1>کتب گیلری</h1>
+
+<div class="book-gallery">
+    <!-- Book 1 -->
+    <div class="book-card" onclick="window.open('('https://drive.google.com/uc?export=download&id=1fwk-DMM_UOCTSIpLdVbqdungotCKbWmN')">
+    <div class="book-cover">')">
+        <div class="book-cover">
+            <i class="fas fa-book"></i>
+        </div>
+        <div class="book-title">التحقیقات لدفع التلبیسات</div>
+    </div>
+
+    <!-- Book 2 -->
+    <div class="book-card" onclick="window.open('https://drive.google.com/file/d/1abc123def456ghi789xyz/view?usp=sharing')">
+        <div class="book-cover">
+            <i class="fas fa-book"></i>
+        </div>
+        <div class="book-title">بدعتی کے پیچھے نماز کا مسئلہ</div>
+    </div>
+
+    <!-- Book 3 -->
+    <div class="book-card" onclick="window.open('https://drive.google.com/file/d/1xyz999uvw888rst666/view?usp=sharing')">
+        <div class="book-cover">
+            <i class="fas fa-book"></i>
+        </div>
+        <div class="book-title">عثمانی فرقے کے نظریات پر ایک نظر</div>
+    </div>
+</div>
+
+</body>
+</html>
+
     <!-- Books Section -->
-    <section class="books">
+    <section class="books" id="books">
         <div class="container">
             <h2 class="section-title">نمونہ کتب</h2>
             <div class="books-grid">
-                <div class="book-card">
-                    <div class="book-cover">
-                        <i class="fas fa-book"></i>
-                    </div>
+                
                     <div class="book-details">
                         <h3>احکام زکوٰۃ و صدقات</h3>
                         <p class="book-author">مفتی محمد سہیل خان شیرانی</p>
                     </div>
                 </div>
                 
-                <div class="book-card">
-                    <div class="book-cover">
+               <div class="book-card" onclick="window.open('https://drive.google.com/uc?export=download&id=1fwk-DMM_UOCTSIpLdVbqdungotCKbWmN')">
+    <div class="book-cover">
+        <i class="fas fa-book"></i>
+    </div>
+    التحقیقات لدفع التلبیسات (ڈاؤنلوڈ کریں)
+</div>
                         <i class="fas fa-book"></i>
                     </div>
                     <div class="book-details">
@@ -961,7 +1369,7 @@
                     </div>
                 </div>
                 
-                <div class="book-card">
+                <div class="book-card" onclick="window.open('https://example.com/book3', '_blank')">
                     <div class="book-cover">
                         <i class="fas fa-book"></i>
                     </div>
@@ -971,7 +1379,7 @@
                     </div>
                 </div>
                 
-                <div class="book-card">
+                <div class="book-card" onclick="window.open('https://example.com/book4', '_blank')">
                     <div class="book-cover">
                         <i class="fas fa-book"></i>
                     </div>
@@ -985,7 +1393,7 @@
     </section>
     
     <!-- Contact Section -->
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title" style="color: white;">رابطہ کریں</h2>
             <div class="contact-container">
@@ -996,7 +1404,7 @@
                         </div>
                         <div>
                             <h3>ہمارا پتہ</h3>
-                            <p> شیرانی کالونی کیڈٹ کالج روڈ،ضلع پشین صوبہ بلوچستان</p>
+                            <p>مسجد جامع، شیرانی روڈ، کوہاٹ، خیبر پختونخوا</p>
                         </div>
                     </div>
                     
@@ -1005,9 +1413,9 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <h3>فون نمبر </h3>
-                            <p>+92 3033823350</p>
-                            <p>+92 3138004728</p>
+                            <h3>فون نمبر</h3>
+                            <p>+92 123 4567890</p>
+                            <p>+92 987 6543210</p>
                         </div>
                     </div>
                     
@@ -1017,14 +1425,14 @@
                         </div>
                         <div>
                             <h3>ای میل</h3>
-                            <p>ksherani73@gmail.com</p>
-                            <p>daro99470@gmail.com</p>
+                            <p>info@muftisohail.com</p>
+                            <p>support@muftisohail.com</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form>
+                    <form id="contact-form">
                         <div class="form-group">
                             <label for="name">نام</label>
                             <input type="text" id="name" class="form-control" required>
@@ -1058,217 +1466,24 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>مفتی محمد سہیل خان شیرانی</h3>
-                     <p>ایک معروف اسلامی عالم، مفتی اور مصنف جن کی خدمات اسلامی علوم کی ترویج و اشاعت میں ناقابل فراموش ہیں۔</p>
-                </div>
+                    <p>ایک معروف اسلامی عالم، مفتی اور مصنف جن کی خدمات اسلامی علوم کی ترویج و اشاعت میں ناقابل فراموش ہیں۔</p>
                     <div class="social-links">
-    			<a href="https://www.facebook.com/share/16d3mTwmSE/" target="_blank">
-        		<i class="fab fa-facebook-f"></i>
-    			</a>
-    			<a href="#"><i class="fab fa-twitter"></i></a>
-    			<a href="https://youtube.com/@islamicinformative-t1x?si=J1Wi_DDwupFe-Qan" target="_blank">
-        		<i class="fab fa-youtube"></i>
-    			</a>
-    			<a href="#"><i class="fab fa-instagram"></i></a>
-    			<a href="https://whatsapp.com/channel/0029VasmUSCBA1eq29pJ0g1n" target="_blank">
-        		<i class="fab fa-whatsapp"></i>
-    			</a>
-                 </div>
+                        <a href="https://facebook.com/MuftiSuhailKhanSherani" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/MuftiSuhailSherani" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/@IslamicInformative" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://instagram.com/MuftiSuhailSherani" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/921234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
                 
                 <div class="footer-col">
                     <h3>اہم لنکس</h3>
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-chevron-left"></i> ہوم پیج</a></li>
                         <li><a href="#"><i class="fas fa-chevron-left"></i> مفتی صاحب کا تعارف</a></li>
-			<!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>مفتی محمد سہیل خان شیرانی کا تعارف</title>
-  <style>
-    body {
-      font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
-      background-color: #f9f9f9;
-      color: #222;
-      padding: 40px;
-      line-height: 2;
-      font-size: 20px;
-    }
-    h1, h2, h3 {
-      color: #006400;
-      text-align: center;
-    }
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-size: 26px;
-      margin-top: 40px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-    p {
-      margin-bottom: 15px;
-    }
-    ul {
-      padding-right: 30px;
-    }
-    li {
-      margin-bottom: 8px;
-    }
-    .highlight {
-      color: #8B0000;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-
-  <!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مفتی محمد سہیل خان شیرانی - اسلامی ویب سائٹ</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
-    <style>
-        /* تمام موجودہ CSS اسٹائلز یہاں رہیں گی */
-        
-        /* نیا اضافہ: تعارفی سیکشن کے لیے */
-        .intro-section {
-            background-color: white;
-            padding: 60px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .intro-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .intro-title {
-            text-align: center;
-            color: var(--primary);
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .intro-title::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            right: 50%;
-            transform: translateX(50%);
-            width: 100px;
-            height: 3px;
-            background: var(--secondary);
-        }
-        
-        .intro-content {
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .intro-content h2 {
-            color: var(--primary);
-            margin: 25px 0 15px;
-            font-size: 1.6rem;
-            border-right: 3px solid var(--secondary);
-            padding-right: 10px;
-        }
-        
-        .intro-content h3 {
-            color: var(--dark);
-            margin: 20px 0 10px;
-            font-size: 1.3rem;
-        }
-        
-        .intro-content ul {
-            margin-right: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .intro-content li {
-            margin-bottom: 8px;
-        }
-        
-        .highlight {
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        .intro-signature {
-            text-align: left;
-            font-style: italic;
-            margin-top: 30px;
-            color: #666;
-        }
-        
-        @media (max-width: 768px) {
-            .intro-title {
-                font-size: 1.8rem;
-            }
-            
-            .intro-content h2 {
-                font-size: 1.4rem;
-            }
-            
-            .intro-content h3 {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>مفتی محمد سہیل خان شیرانی کا تعارف</title>
-  <style>
-    body {
-      font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
-      background-color: #f9f9f9;
-      color: #222;
-      padding: 40px;
-      line-height: 2;
-      font-size: 20px;
-    }
-    h1, h2, h3 {
-      color: #006400;
-      text-align: center;
-    }
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-size: 26px;
-      margin-top: 40px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-    p {
-      margin-bottom: 15px;
-    }
-    ul {
-      padding-right: 30px;
-    }
-    li {
-      margin-bottom: 8px;
-    }
-    .highlight {
-      color: #8B0000;
-      font-weight: bold;
-    }
-  </style>
-</head>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> فتاویٰ جات</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> ویڈیوز</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-left"></i> کتب</a></li>
+                        <li><a href="#fatawa"><i class="fas fa-chevron-left"></i> فتاویٰ جات</a></li>
+                        <li><a href="#media"><i class="fas fa-chevron-left"></i> ویڈیوز</a></li>
+                        <li><a href="#books"><i class="fas fa-chevron-left"></i> کتب</a></li>
                     </ul>
                 </div>
                 
@@ -1286,7 +1501,7 @@
                 <div class="footer-col">
                     <h3>نیوز لیٹر</h3>
                     <p>نئے فتاویٰ جات، ویڈیوز اور اپ ڈیٹس ای میل پر حاصل کریں</p>
-                    <form>
+                    <form id="newsletter-form">
                         <input type="email" placeholder="آپ کا ای میل" class="form-control" style="margin-bottom: 10px;">
                         <button class="btn" style="width: 100%;">سبسکرائب کریں</button>
                     </form>
@@ -1301,8 +1516,8 @@
     
     <script>
         // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
         
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -1319,8 +1534,25 @@
             });
         });
         
+        // Search Functionality
+        const searchBtn = document.getElementById('search-btn');
+        const searchInput = document.getElementById('search-input');
+        
+        searchBtn.addEventListener('click', () => {
+            if (searchInput.value.trim() !== '') {
+                alert(`"${searchInput.value}" تلاش کیا جا رہا ہے... اصل ویب سائٹ پر یہ سرچ فنکشنل ہوگا۔`);
+                searchInput.value = '';
+            }
+        });
+        
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+        
         // Form Submission Handling
-        const contactForm = document.querySelector('.contact-form form');
+        const contactForm = document.getElementById('contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -1330,7 +1562,7 @@
         }
         
         // Newsletter Subscription
-        const newsletterForm = document.querySelector('.footer-col:last-child form');
+        const newsletterForm = document.getElementById('newsletter-form');
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -1341,6 +1573,33 @@
                 }
             });
         }
+        
+        // Tab Switching Functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+        
+        // Book Download Functionality
+        const bookCards = document.querySelectorAll('.book-card');
+        bookCards.forEach(card => {
+            card.addEventListener('click', function() {
+                alert('کتاب ڈاؤن لوڈ کی جا رہی ہے... اصل ویب سائٹ پر یہ لنک فنکشنل ہوگا۔');
+            });
+        });
     </script>
 </body>
 </html>
