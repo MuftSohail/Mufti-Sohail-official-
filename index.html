@@ -9,135 +9,90 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- General Reset & Variables --- */
+        /* --- General Settings --- */
+        :root {
+            --primary: #0a5f38;
+            --secondary: #d4af37;
+            --light: #f4f7f6;
+            --dark: #2c3e50;
+            --white: #ffffff;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            outline: none;
         }
-        
-        :root {
-            --primary: #0a5f38;        /* Deep Green */
-            --primary-dark: #053b23;
-            --secondary: #d4af37;      /* Gold */
-            --light: #f8f9fa;
-            --dark: #2c3e50;
-            --text-color: #333;
-            --white: #ffffff;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
+
         body {
             font-family: 'Amiri', 'Noto Nastaliq Urdu', serif;
             line-height: 2;
-            color: var(--text-color);
-            background-color: #f4f7f6;
-            direction: rtl;
+            background-color: var(--light);
+            color: #333;
             overflow-x: hidden;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
+
+        h1, h2, h3 {
             font-family: 'Noto Nastaliq Urdu', serif;
             color: var(--primary);
-            margin-bottom: 1rem;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: 0.3s;
-        }
-
-        ul {
-            list-style: none;
-        }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
 
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        .section-padding {
-            padding: 80px 0;
-        }
+        .section-padding { padding: 60px 0; }
 
-        /* --- Header Styles --- */
+        /* --- Header --- */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--primary), #053b23);
+            color: white;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        
-        .header-top {
+
+        .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
-        .logo-img {
-            width: 60px;
-            height: 60px;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid var(--secondary);
-            color: var(--primary);
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .logo-text h1 {
-            font-size: 1.5rem;
+
+        .logo h1 {
             color: var(--secondary);
+            font-size: 1.4rem;
             margin: 0;
-            line-height: 1.2;
-        }
-        
-        .logo-text p {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.8);
-            margin: 0;
-        }
-        
-        /* Navigation */
-        nav {
-            padding: 10px 0;
         }
 
+        /* Navigation */
         .nav-links {
             display: flex;
-            justify-content: center;
             gap: 20px;
         }
 
         .nav-links a {
-            color: var(--white);
+            color: white;
             font-size: 1.1rem;
-            padding: 8px 15px;
+            padding: 5px 10px;
             border-radius: 5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            background: rgba(255,255,255,0.15);
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
             color: var(--secondary);
         }
 
@@ -145,203 +100,95 @@
             display: none;
             background: none;
             border: none;
-            color: var(--white);
-            font-size: 1.8rem;
+            color: white;
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
         /* --- Hero Section --- */
         .hero {
-            background: linear-gradient(rgba(10, 95, 56, 0.85), rgba(5, 40, 25, 0.9)), url('https://images.unsplash.com/photo-1564121211835-e88c852648ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(10, 95, 56, 0.9), rgba(10, 61, 31, 0.8)), url('https://images.unsplash.com/photo-1560421683-2588f3e620b3?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
-            color: var(--white);
+            color: white;
             text-align: center;
-            padding: 120px 20px;
-            position: relative;
+            padding: 100px 20px;
         }
-        
+
         .hero h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--secondary);
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        
-        .hero p {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
+
         .btn {
-            padding: 12px 35px;
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: white;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1rem;
+            border: 2px solid var(--secondary);
             cursor: pointer;
             transition: all 0.3s;
-            border: 2px solid transparent;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
         }
-        
-        .btn-primary {
-            background: var(--secondary);
-            color: var(--white);
-        }
-        
-        .btn-primary:hover {
+
+        .btn:hover {
             background: transparent;
-            border-color: var(--secondary);
             color: var(--secondary);
         }
-        
+
         .btn-outline {
             background: transparent;
-            border-color: var(--white);
-            color: var(--white);
+            border: 2px solid white;
         }
-        
+
         .btn-outline:hover {
-            background: var(--white);
+            background: white;
             color: var(--primary);
         }
 
-        /* --- Intro Section --- */
-        .intro-section {
-            background: var(--white);
-        }
-
-        .intro-content {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            border-top: 5px solid var(--primary);
-        }
-
-        .intro-grid {
-            display: grid;
-            gap: 20px;
-        }
-
-        .highlight-box {
-            background: #f0f8f4;
-            padding: 20px;
-            border-right: 4px solid var(--secondary);
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-
-        /* --- Social Links (Modern) --- */
-        .social-bar {
+        /* --- Social Links --- */
+        .social-container {
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin: 30px 0;
         }
-
+        
         .social-btn {
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 10px 25px;
-            border-radius: 50px;
+            padding: 10px 20px;
+            border-radius: 10px;
             color: white;
-            font-weight: bold;
-            transition: transform 0.3s;
-            font-family: 'Arial', sans-serif; /* Better for English names */
-            font-size: 0.9rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
-        .social-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .fb { background: #3b5998; }
+        
+        .fb { background: #1877F2; }
         .tt { background: #000000; }
         .yt { background: #FF0000; }
+        
+        .social-btn:hover { transform: translateY(-3px); }
 
-        /* --- Features Section --- */
-        .features {
-            background-color: #f8f9fa;
-        }
-
-        .section-title {
+        /* --- Media Section (Tabs) --- */
+        .tabs-container {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            margin: 10px auto;
-            border-radius: 2px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-            border-bottom: 3px solid transparent;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-bottom-color: var(--secondary);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        /* --- Media Section --- */
-        .media-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .tab-btn {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
             padding: 10px 30px;
-            border-radius: 30px;
+            margin: 5px;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            font-family: 'Noto Nastaliq Urdu', serif;
             font-size: 1.1rem;
             cursor: pointer;
-            font-family: 'Noto Nastaliq Urdu', serif;
+            border-radius: 30px;
             transition: 0.3s;
         }
 
@@ -352,7 +199,7 @@
 
         .tab-content {
             display: none;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
 
@@ -386,118 +233,64 @@
             padding: 15px;
         }
 
-        .media-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #777;
-            font-size: 0.9rem;
-            margin-top: 10px;
+        /* --- Google Sheet --- */
+        .google-sheet-container {
+            width: 100%;
+            height: 500px;
+            margin: 40px 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .google-sheet-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
-        /* --- Books Section --- */
+        /* --- Book Section --- */
         .books-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
 
         .book-card {
             background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s;
-            cursor: pointer;
+            padding: 20px;
+            border-radius: 15px;
             text-align: center;
-            display: flex;
-            flex-direction: column;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-top: 4px solid var(--secondary);
         }
 
         .book-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        .book-cover {
-            background: #e9ecef;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .book-icon {
+            font-size: 3rem;
             color: var(--primary);
-            font-size: 4rem;
-        }
-
-        .book-details {
-            padding: 20px;
-            background: white;
-            flex-grow: 1;
-        }
-
-        .book-details h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
-
-        /* --- Fatawa Section --- */
-        .fatwa-card {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: var(--shadow);
-            border-right: 5px solid var(--secondary);
-            margin-bottom: 20px;
-        }
-
-        .fatwa-q {
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 10px;
-            display: block;
-            font-size: 1.2rem;
-        }
-
-        /* --- Contact & Footer --- */
-        .contact {
-            background: var(--dark);
-            color: white;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 12px;
             margin-bottom: 15px;
-            border: none;
-            border-radius: 5px;
-            font-family: inherit;
         }
 
+        /* --- Footer --- */
         footer {
-            background: #1a252f;
-            color: #aaa;
-            text-align: center;
-            padding: 20px 0;
-            border-top: 1px solid #333;
+            background: var(--dark);
+            color: #ccc;
+            padding: 40px 0;
+            margin-top: 50px;
         }
 
-        /* --- Responsive Tweaks --- */
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            .header-top {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
             .nav-links {
                 display: none;
                 flex-direction: column;
-                background: var(--primary-dark);
+                background: var(--primary);
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -505,151 +298,245 @@
                 padding: 20px;
                 text-align: center;
             }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero h2 { font-size: 2rem; }
-            .hero p { font-size: 1.1rem; }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .hero h2 { font-size: 1.8rem; }
+            .search-bar { display: none; } /* Simplified for mobile */
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <div class="header-top">
-                <div class="logo">
-                    <div class="logo-img">م</div>
-                    <div class="logo-text">
-                        <h1>مفتی محمد سہیل خان شیرانی</h1>
-                        <p>اسلامی علوم و فتاویٰ جات</p>
-                    </div>
+        <div class="container header-inner">
+            <div class="logo">
+                <div style="width: 50px; height: 50px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary); font-weight:bold;">م</div>
+                <div>
+                    <h1>مفتی محمد سہیل خان شیرانی</h1>
+                    <small>اسلامی علوم و فتاویٰ جات</small>
                 </div>
-                <button class="mobile-menu-btn" id="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
             
             <nav>
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="#" class="active"><i class="fas fa-home"></i> ہوم</a></li>
-                    <li><a href="#about"><i class="fas fa-user"></i> تعارف</a></li>
-                    <li><a href="#fatawa"><i class="fas fa-book-open"></i> فتاویٰ</a></li>
+                    <li><a href="#"><i class="fas fa-home"></i> ہوم</a></li>
+                    <li><a href="#fatawa"><i class="fas fa-book"></i> فتاویٰ</a></li>
+                    <li><a href="#books"><i class="fas fa-book-open"></i> کتب</a></li>
                     <li><a href="#media"><i class="fas fa-video"></i> بیانات</a></li>
-                    <li><a href="#books"><i class="fas fa-book"></i> کتب</a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i> رابطہ</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone-alt"></i> رابطہ</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <section class="section-padding" style="background: white;">
         <div class="container">
-            <h2>علم دین کی روشنی سے زندگی منور کریں</h2>
-            <p>مفتی محمد سہیل خان شیرانی کی معتبر اسلامی رہنمائی، فتاویٰ جات اور اصلاحی بیانات تک رسائی حاصل کریں۔</p>
-            <div class="cta-buttons">
-                <a href="#fatawa" class="btn btn-primary"><i class="fas fa-search"></i> فتاویٰ تلاش کریں</a>
-                <a href="#media" class="btn btn-outline"><i class="fas fa-play-circle"></i> تازہ ترین بیانات</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding intro-section" id="about">
-        <div class="container">
-            <div class="section-title">تعارفِ شخصیت</div>
-            <div class="intro-content">
-                <div class="intro-grid">
-                    <p><strong>مفتی محمد سہیل خان شیرانی حفظہ اللہ</strong> کا شمار پاکستان کے ان مخلص، باعمل، اور علم دوست علماء میں ہوتا ہے جنہوں نے دورِ حاضر کی علمی و فکری ضروریات کو سمجھتے ہوئے دیوبندی مسلک اور اہل السنۃ والجماعۃ کی صحیح ترجمانی کی۔</p>
-                    
-                    <div class="highlight-box">
-                        <h3><i class="fas fa-id-card"></i> مختصر کوائف</h3>
-                        <ul>
-                            <li><strong>اصل نام:</strong> دارو خان شیرانی</li>
-                            <li><strong>تعلیمی قابلیت:</strong> فاضلِ دارالعلوم کراچی، تخصص فی الفقہ</li>
-                            <li><strong>اساتذہ:</strong> مفتی محمد تقی عثمانی، مفتی رفیع عثمانی (رحمۃ اللہ علیہ)</li>
-                            <li><strong>عصری مہارت:</strong> گوگل سے AI کے 5 سرٹیفیکیٹس</li>
-                        </ul>
-                    </div>
-
-                    <p>آپ قرآن و حدیث، فقہ و اصول، ردِ بدعت، مناظرہ و تحقیق اور تربیتِ طلبہ میں ممتاز مقام رکھتے ہیں۔ جدید تقاضوں کو مدنظر رکھتے ہوئے آپ نے آرٹیفیشل انٹیلیجنس کے کورسز بھی کیے ہیں۔</p>
-                </div>
-
-                <div class="social-bar">
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <h2 style="font-size: 2.2rem; margin-bottom: 20px;">تعارفِ شخصیت</h2>
+                <p style="font-size: 1.2rem;">مفتی محمد سہیل خان شیرانی حفظہ اللہ کا شمار پاکستان کے ان مخلص علماء میں ہوتا ہے جنہوں نے دورِ حاضر کی ضروریات کو سمجھتے ہوئے دین کی خدمت کی۔ آپ فاضلِ دارالعلوم کراچی ہیں اور مفتی محمد تقی عثمانی صاحب کے شاگردوں میں سے ہیں۔</p>
+                <p>آپ نے دینی علوم کے ساتھ ساتھ جدید ٹیکنالوجی اور آرٹیفیشل انٹیلیجنس (Google Certified) میں بھی مہارت حاصل کی ہے۔</p>
+                
+                <div class="social-container">
                     <a href="https://www.facebook.com/MuftiSuhailKhanSherani" target="_blank" class="social-btn fb">
-                        <i class="fab fa-facebook-f"></i> Facebook
+                        <i class="fab fa-facebook-f"></i> فیس بک
                     </a>
                     <a href="https://www.tiktok.com/@MuftiSuhailSherani" target="_blank" class="social-btn tt">
-                        <i class="fab fa-tiktok"></i> TikTok
+                        <i class="fab fa-tiktok"></i> ٹک ٹاک
                     </a>
-                    <a href="#" target="_blank" class="social-btn yt">
-                        <i class="fab fa-youtube"></i> YouTube
+                    <a href="https://www.youtube.com/@IslamicInformative-t1x" target="_blank" class="social-btn yt">
+                        <i class="fab fa-youtube"></i> یوٹیوب چینل
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding features">
+    <section class="hero">
         <div class="container">
-            <h2 class="section-title">ہماری خدمات</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-quran feature-icon"></i>
-                    <h3>شرعی فتاویٰ</h3>
-                    <p>روزمرہ کے مسائل کا حل قرآن و سنت کی روشنی میں</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-laptop-code feature-icon"></i>
-                    <h3>جدید علوم</h3>
-                    <p>دینی علوم کے ساتھ جدید ٹیکنالوجی کی آگاہی</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-gavel feature-icon"></i>
-                    <h3>ردِ بدعات</h3>
-                    <p>باطل نظریات اور فرقوں کا علمی و تحقیقی رد</p>
-                </div>
+            <h2>علم دین کی روشنی سے اپنی زندگی منور کریں</h2>
+            <p>مفتی محمد سہیل خان شیرانی کی معتبر اسلامی رہنمائی اور فتاویٰ جات تک رسائی حاصل کریں</p>
+            <div style="margin-top: 30px;">
+                <a href="#fatawa" class="btn">فتاویٰ تلاش کریں</a>
+                <a href="#media" class="btn btn-outline">ویڈیوز دیکھیں</a>
             </div>
         </div>
     </section>
 
-    <section class="section-padding media-section" id="media">
+    <section class="container">
+        <h3 style="text-align: center; margin-top: 50px;">شیڈول / اپڈیٹس</h3>
+        <div class="google-sheet-container">
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxffzmkEWCqcWmqpJvhGDu6Cv_2ro9uKuPnCaL3RECrq3TUT2vcue09dwU-3xEOQmipVxrEmq2xdr2/pubhtml?widget=true&headers=false"></iframe>
+        </div>
+    </section>
+
+    <section class="section-padding" id="media" style="background: #f8f9fa;">
         <div class="container">
-            <h2 class="section-title">درس و تدریس</h2>
-            
-            <div class="media-tabs">
+            <h2 style="text-align: center; margin-bottom: 30px;">درس و تدریس (میڈیا)</h2>
+
+            <div class="tabs-container">
                 <button class="tab-btn active" onclick="openTab('videos')">ویڈیو لیکچرز</button>
-                <button class="tab-btn" onclick="openTab('audios')">آڈیو بیانات</button>
+                <button class="tab-btn" onclick="openTab('audios')">آڈیو خطبات</button>
             </div>
 
             <div id="videos" class="tab-content active">
+                
                 <div class="media-card">
                     <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/placeholder1" title="Video" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/jZ8_coH0LP0?si=MMR176u2HYv0bpcW" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="media-info">
-                        <h3>عصری مسائل اور ان کا حل</h3>
-                        <div class="media-meta">
-                            <span><i class="fas fa-eye"></i> 12K</span>
-                            <span><i class="fas fa-calendar"></i> 15 مئی 2025</span>
-                        </div>
+                        <h3>ویڈیو لیکچر 1</h3>
+                        <span><i class="fas fa-calendar"></i> 15 مئی 2025</span>
                     </div>
                 </div>
+
                 <div class="media-card">
                     <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/placeholder2" title="Video" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/ShVKh6vCfZ8?si=tSaOTFnLeL9MJpO5" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="media-info">
-                        <h3>مدارس کا کردار اور اہمیت</h3>
-                        <div class="media-meta">
-                            <span><i class="fas fa-eye"></i> 8K</span>
-                            <span><i class="fas fa-calendar"></i> 20 جون 2025</span>
-                        </div>
+                        <h3>ویڈیو لیکچر 2</h3>
                     </div>
                 </div>
-         
+
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/6XTTyHTBNDo?si=MHGhAsMcE0fgErkt" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>ویڈیو لیکچر 3</h3>
+                    </div>
+                </div>
+
+                 <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/tErmzkV37lI?start=34" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info"><h3>ویڈیو لیکچر 4</h3></div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/JIraoRP23bA" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info"><h3>ویڈیو لیکچر 5</h3></div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/UCqJ6-rHGso" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info"><h3>ویڈیو لیکچر 6</h3></div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/7Gl-_jtzVAw?si=Xr4NBy7LnwgSnMsM" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info"><h3>ویڈیو لیکچر 7</h3></div>
+                </div>
+
+            </div>
+
+            <div id="audios" class="tab-content">
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/D6Ac5JpCHmI" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>تقویٰ کی اہمیت اور اس کے مراتب</h3>
+                        <p><i class="fas fa-headphones"></i> آڈیو خطبہ</p>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/UkWd0azv3fQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>قرآن فہمی کی ضرورت</h3>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/7cjVj1ZyzyE" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>دعا کی قبولیت کے اوقات</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://www.youtube.com/@IslamicInformative-t1x" target="_blank" class="btn">
+                    <i class="fas fa-list"></i> تمام ویڈیوز/آڈیوز دیکھیں
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="fatawa" style="background: white;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">منتخب فتاویٰ جات</h2>
+            <div style="display: grid; gap: 20px;">
+                
+                <div style="background: #fdfdfd; padding: 20px; border-right: 5px solid var(--primary); box-shadow: var(--shadow);">
+                    <h3 style="font-size: 1.3rem;"><i class="fas fa-exclamation-circle"></i> تشدد برائے اصلاح اور مدارس کا کردار</h3>
+                    <p>اسلامی فقہ میں اصلاحی تادیب کی اجازت صرف شرائط کے ساتھ دی گئی ہے۔ شدید مار نہیں دی جا سکتی اور چہرے پر مارنا حرام ہے۔ جو استاد حد سے تجاوز کرے وہ گناہگار ہے۔</p>
+                </div>
+
+                <div style="background: #fdfdfd; padding: 20px; border-right: 5px solid var(--secondary); box-shadow: var(--shadow);">
+                    <h3 style="font-size: 1.3rem;"><i class="fas fa-coins"></i> زیورات پر زکوٰۃ</h3>
+                    <p>سونے اور چاندی کے زیورات اگر نصاب (سونا: 87.48 گرام) کو پہنچ جائیں تو ان پر زکوٰۃ واجب ہے۔</p>
+                </div>
+
+                <div style="background: #fdfdfd; padding: 20px; border-right: 5px solid var(--primary); box-shadow: var(--shadow);">
+                    <h3 style="font-size: 1.3rem;"><i class="fas fa-utensils"></i> مشکوک گوشت کا حکم</h3>
+                    <p>شرعی اصول یہ ہے کہ جب تک کسی چیز کے حرام ہونے کی واضح دلیل نہ ملے، وہ حلال ہے۔</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="books" style="background: #f0f8ff;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">تصنیفات و کتب (ڈاؤنلوڈ)</h2>
+            <div class="books-grid">
+                
+                <div class="book-card" onclick="window.open('https://drive.google.com/uc?export=download&id=1fwk-DMM_UOCTSIpLdVbqdungotCKbWmN')">
+                    <div class="book-icon"><i class="fas fa-book"></i></div>
+                    <h3>التحقیقات لدفع التلبیسات</h3>
+                    <p>فتنہ سیفیت وبریلویت کے رد میں تصنیف</p>
+                    <span style="color: var(--secondary); font-size: 0.9rem;">(کلک کریں اور ڈاؤنلوڈ کریں)</span>
+                </div>
+
+                <div class="book-card" onclick="window.open('https://drive.google.com/file/d/1abc123def456ghi789xyz/view?usp=sharing')">
+                    <div class="book-icon"><i class="fas fa-mosque"></i></div>
+                    <h3>بدعتی کے پیچھے نماز کا مسئلہ</h3>
+                    <p>فقہی دلائل پر مشتمل رسالہ</p>
+                </div>
+
+                <div class="book-card" onclick="window.open('https://drive.google.com/file/d/1xyz999uvw888rst666/view?usp=sharing')">
+                    <div class="book-icon"><i class="fas fa-pen-nib"></i></div>
+                    <h3>عثمانی فرقے کے نظریات</h3>
+                    <p>ایک فتنۂ نوپید کا تفصیلی رد</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="contact" style="background: var(--dark); color: white;">
+        <div class="container">
+            <h2 style="text-align: center; color: white; margin-bottom: 40px;">رابطہ کریں</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                
+                <div>
+                    <div style="margin-bottom: 20px;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                        <span style="font-size: 1.2rem; margin-right: 10px;">شیرانی کالونی، کیڈٹ کالج روڈ، ضلع پشین، بلوچستان</span>
+                    </div>
+       
