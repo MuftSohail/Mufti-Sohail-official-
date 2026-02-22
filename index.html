@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-88">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مفتی محمد سہیل خان شیرانی - اسلامی ویب سائٹ</title>
     
@@ -233,22 +233,6 @@
             padding: 15px;
         }
 
-        /* --- Google Sheet --- */
-        .google-sheet-container {
-            width: 100%;
-            height: 500px;
-            margin: 40px 0;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .google-sheet-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         /* --- Book Section --- */
         .books-grid {
             display: grid;
@@ -364,12 +348,7 @@
         </div>
     </section>
 
-    <section class="container">
-        <h3 style="text-align: center; margin-top: 50px;">شیڈول / اپڈیٹس</h3>
-        <div class="google-sheet-container">
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxffzmkEWCqcWmqpJvhGDu6Cv_2ro9uKuPnCaL3RECrq3TUT2vcue09dwU-3xEOQmipVxrEmq2xdr2/pubhtml?widget=true&headers=false"></iframe>
-        </div>
-    </section>
+    <!-- Google Sheet کا سیکشن مکمل ہٹا دیا گیا ہے -->
 
     <section class="section-padding" id="media" style="background: #f8f9fa;">
         <div class="container">
@@ -381,7 +360,7 @@
             </div>
 
             <div id="videos" class="tab-content active">
-                <!-- Existing videos -->
+                <!-- پہلی ویڈیو -->
                 <div class="media-card">
                     <div class="media-player">
                         <iframe src="https://www.youtube.com/embed/jZ8_coH0LP0?si=MMR176u2HYv0bpcW" frameborder="0" allowfullscreen></iframe>
@@ -392,15 +371,18 @@
                     </div>
                 </div>
 
+                <!-- دوسری ویڈیو (پلے لسٹ) - پہلے والی -->
                 <div class="media-card">
                     <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/ShVKh6vCfZ8?si=tSaOTFnLeL9MJpO5" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Ic-ew7B_l7RagT224yP5x9" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="media-info">
-                        <h3>ویڈیو لیکچر 2</h3>
+                        <h3>ویڈیو لیکچر 2 (پلے لسٹ)</h3>
+                        <span><i class="fas fa-list"></i> مکمل پلے لسٹ</span>
                     </div>
                 </div>
 
+                <!-- باقی ویڈیوز -->
                 <div class="media-card">
                     <div class="media-player">
                         <iframe src="https://www.youtube.com/embed/6XTTyHTBNDo?si=MHGhAsMcE0fgErkt" frameborder="0" allowfullscreen></iframe>
@@ -438,14 +420,47 @@
                     <div class="media-info"><h3>ویڈیو لیکچر 7</h3></div>
                 </div>
 
-                <!-- نئی ویڈیو (آپ کی دی ہوئی) شامل کی گئی -->
+                <!-- آپ کی دی گئی خصوصی ویڈیو -->
                 <div class="media-card">
                     <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/9hpFZ7urHuQ?si=poiFI5PVhxYyD8rf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/9hpFZ7urHuQ?si=poiFI5PVhxYyD8rf" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="media-info">
                         <h3>خصوصی ویڈیو</h3>
                         <span><i class="fas fa-calendar"></i> نیا بیان</span>
+                    </div>
+                </div>
+
+                <!-- نئی پلے لسٹ 1 -->
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_LFVGGiN5xPPXGTCsAL4_JF" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>پلے لسٹ 1</h3>
+                        <span><i class="fas fa-list"></i> مزید بیانات</span>
+                    </div>
+                </div>
+
+                <!-- نئی پلے لسٹ 2 -->
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_JUoz4oloCSVZ8v3uF6yoYL" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>پلے لسٹ 2</h3>
+                        <span><i class="fas fa-list"></i> خصوصی دروس</span>
+                    </div>
+                </div>
+
+                <!-- نئی پلے لسٹ 3 -->
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Iip83N1ZOehZIZ11jtA2N5" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>پلے لسٹ 3</h3>
+                        <span><i class="fas fa-list"></i> مسائل و حل</span>
                     </div>
                 </div>
             </div>
@@ -602,7 +617,7 @@
             event.target.classList.add("active");
         }
 
-        // ڈراپ ڈاؤن کو کلک کرنے پر خودکار بند (اختیاری)
+        // ڈراپ ڈاؤن کو کلک کرنے پر خودکار بند
         document.addEventListener('click', function(event) {
             if (!mobileBtn.contains(event.target) && !navLinks.contains(event.target)) {
                 navLinks.classList.remove('active');
