@@ -283,6 +283,7 @@
             color: #ccc;
             padding: 40px 0;
             margin-top: 50px;
+            text-align: center;
         }
 
         /* --- Responsive --- */
@@ -301,7 +302,6 @@
             .nav-links.active { display: flex; }
             .mobile-menu-btn { display: block; }
             .hero h2 { font-size: 1.8rem; }
-            .search-bar { display: none; } /* Simplified for mobile */
         }
     </style>
 </head>
@@ -381,7 +381,7 @@
             </div>
 
             <div id="videos" class="tab-content active">
-                
+                <!-- Existing videos -->
                 <div class="media-card">
                     <div class="media-player">
                         <iframe src="https://www.youtube.com/embed/jZ8_coH0LP0?si=MMR176u2HYv0bpcW" frameborder="0" allowfullscreen></iframe>
@@ -410,7 +410,7 @@
                     </div>
                 </div>
 
-                 <div class="media-card">
+                <div class="media-card">
                     <div class="media-player">
                         <iframe src="https://www.youtube.com/embed/tErmzkV37lI?start=34" frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -438,6 +438,16 @@
                     <div class="media-info"><h3>ویڈیو لیکچر 7</h3></div>
                 </div>
 
+                <!-- نئی ویڈیو (آپ کی دی ہوئی) شامل کی گئی -->
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/9hpFZ7urHuQ?si=poiFI5PVhxYyD8rf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>خصوصی ویڈیو</h3>
+                        <span><i class="fas fa-calendar"></i> نیا بیان</span>
+                    </div>
+                </div>
             </div>
 
             <div id="audios" class="tab-content">
@@ -539,4 +549,65 @@
                         <i class="fas fa-map-marker-alt" style="color: var(--secondary); font-size: 1.5rem;"></i>
                         <span style="font-size: 1.2rem; margin-right: 10px;">شیرانی کالونی، کیڈٹ کالج روڈ، ضلع پشین، بلوچستان</span>
                     </div>
-       
+                    <div style="margin-bottom: 20px;">
+                        <i class="fas fa-phone" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                        <span style="font-size: 1.2rem; margin-right: 10px;">+92 123 4567890</span>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <i class="fas fa-envelope" style="color: var(--secondary); font-size: 1.5rem;"></i>
+                        <span style="font-size: 1.2rem; margin-right: 10px;">info@muftisuhail.com</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--secondary);">سوشل میڈیا</h3>
+                    <div style="display: flex; gap: 15px; margin-top: 15px;">
+                        <a href="https://www.facebook.com/MuftiSuhailKhanSherani" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@IslamicInformative-t1x" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@MuftiSuhailSherani" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 مفتی محمد سہیل خان شیرانی۔ تمام حقوق محفوظ ہیں۔</p>
+            <p>بمطابق اسلامی اصول و ضوابط</p>
+        </div>
+    </footer>
+
+    <script>
+        // موبائل مینو ٹوگل
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+
+        // ٹیبز (ویڈیو/آڈیو) فنکشن
+        function openTab(tabName) {
+            var i;
+            var tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+            var tabBtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            event.target.classList.add("active");
+        }
+
+        // ڈراپ ڈاؤن کو کلک کرنے پر خودکار بند (اختیاری)
+        document.addEventListener('click', function(event) {
+            if (!mobileBtn.contains(event.target) && !navLinks.contains(event.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
