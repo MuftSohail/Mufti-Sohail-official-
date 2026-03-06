@@ -1,628 +1,675 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-    <meta charset="UTF-88">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مفتی محمد سہیل خان شیرانی - اسلامی ویب سائٹ</title>
+    <title>مفتی سہیل شیرانی | مستند فتاویٰ، بیانات، کتب و رہنمائی</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Meta Description -->
+    <meta name="description" content="مفتی سہیل شیرانی کی آفیشل ویب سائٹ — مستند اسلامی فتاویٰ، بیانات، کتب، اور جدید دینی رہنمائی۔">
     
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="مفتی سہیل شیرانی | مستند فتاویٰ، بیانات، کتب و رہنمائی">
+    <meta property="og:description" content="مفتی سہیل شیرانی کی آفیشل ویب سائٹ — مستند اسلامی فتاویٰ، بیانات، کتب، اور جدید دینی رہنمائی۔">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560421683-2588f3e620b3?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://www.muftisuhail.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="مفتی سہیل شیرانی | مستند فتاویٰ، بیانات، کتب و رہنمائی">
+    <meta name="twitter:description" content="مفتی سہیل شیرانی کی آفیشل ویب سائٹ — مستند اسلامی فتاویٰ، بیانات، کتب، اور جدید دینی رہنمائی۔">
+    
+    <!-- Preconnect for CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- CSS with defer loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Jameel+Noori+Nastaleeq&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
+    
+    <!-- Font Awesome with defer -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "مفتی محمد سہیل خان شیرانی",
+        "description": "اسلامی عالم، مفتی اور مصنف",
+        "url": "https://www.muftisuhail.com",
+        "sameAs": [
+            "https://www.facebook.com/MuftiSuhailKhanSherani",
+            "https://www.youtube.com/@IslamicInformative-t1x"
+        ]
+    }
+    </script>
+    
+    <!-- Inline Critical CSS -->
     <style>
-        /* --- General Settings --- */
+        /* Critical CSS - Rendered immediately */
         :root {
-            --primary: #0a5f38;
-            --secondary: #d4af37;
-            --light: #f4f7f6;
-            --dark: #2c3e50;
-            --white: #ffffff;
-            --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --dark-bg: #0a1929;
+            --dark-secondary: #1a2d42;
+            --light-text: #f0f4f8;
+            --light-secondary: #c9d6e6;
+            --primary-accent: #00b894;
+            --secondary-accent: #0984e3;
+            --cta-green: #00b894;
+            --cta-blue: #0984e3;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
-            font-family: 'Amiri', 'Noto Nastaliq Urdu', serif;
-            line-height: 2;
-            background-color: var(--light);
-            color: #333;
+            font-family: 'Amiri', serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.8;
             overflow-x: hidden;
         }
-
-        h1, h2, h3 {
-            font-family: 'Noto Nastaliq Urdu', serif;
-            color: var(--primary);
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-
+        
+        /* Header & Navigation */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 25, 41, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
-        .section-padding { padding: 60px 0; }
-
-        /* --- Header --- */
-        header {
-            background: linear-gradient(135deg, var(--primary), #053b23);
-            color: white;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .header-inner {
+        
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
+        
         .logo h1 {
-            color: var(--secondary);
-            font-size: 1.4rem;
+            font-family: 'Jameel Noori Nastaleeq', serif;
+            font-size: 1.8rem;
+            color: var(--light-text);
             margin: 0;
         }
-
-        /* Navigation */
+        
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 2rem;
+            list-style: none;
         }
-
+        
         .nav-links a {
-            color: white;
+            color: var(--light-secondary);
+            text-decoration: none;
             font-size: 1.1rem;
-            padding: 5px 10px;
-            border-radius: 5px;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
         }
-
+        
         .nav-links a:hover {
-            background: rgba(255,255,255,0.1);
-            color: var(--secondary);
+            color: var(--primary-accent);
         }
-
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Navigation */
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--light-text);
             font-size: 1.5rem;
             cursor: pointer;
         }
-
-        /* --- Hero Section --- */
-        .hero {
-            background: linear-gradient(rgba(10, 95, 56, 0.9), rgba(10, 61, 31, 0.8)), url('https://images.unsplash.com/photo-1560421683-2588f3e620b3?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--secondary);
-            color: white;
-            border-radius: 50px;
-            font-weight: bold;
-            border: 2px solid var(--secondary);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn:hover {
-            background: transparent;
-            color: var(--secondary);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary);
-        }
-
-        /* --- Social Links --- */
-        .social-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: 30px 0;
-        }
         
-        .social-btn {
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 20px;
-            border-radius: 10px;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+            padding-top: 80px;
         }
         
-        .fb { background: #1877F2; }
-        .tt { background: #000000; }
-        .yt { background: #FF0000; }
-        
-        .social-btn:hover { transform: translateY(-3px); }
-
-        /* --- Media Section (Tabs) --- */
-        .tabs-container {
+        .hero-content {
             text-align: center;
-            margin-bottom: 30px;
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        .tab-btn {
-            padding: 10px 30px;
-            margin: 5px;
-            border: 2px solid var(--primary);
-            background: transparent;
-            color: var(--primary);
-            font-family: 'Noto Nastaliq Urdu', serif;
+        
+        .hero h2 {
+            font-family: 'Jameel Noori Nastaleeq', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-text);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--light-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
             font-size: 1.1rem;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 2px solid transparent;
         }
-
-        .tab-btn.active, .tab-btn:hover {
-            background: var(--primary);
+        
+        .btn-primary {
+            background: var(--cta-green);
             color: white;
         }
-
-        .tab-content {
-            display: none;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        
+        .btn-primary:hover {
+            background: transparent;
+            border-color: var(--cta-green);
+            color: var(--cta-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 184, 148, 0.3);
         }
-
-        .tab-content.active {
+        
+        .btn-secondary {
+            background: var(--cta-blue);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: transparent;
+            border-color: var(--cta-blue);
+            color: var(--cta-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(9, 132, 227, 0.3);
+        }
+        
+        /* Main Content Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        section:nth-child(even) {
+            background: var(--dark-secondary);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-family: 'Jameel Noori Nastaleeq', serif;
+            font-size: 2.5rem;
+            color: var(--light-text);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary-accent);
+        }
+        
+        /* Services Grid */
+        .services-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
-
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Fatwa Search */
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .search-box {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            padding-left: 3.5rem;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light-text);
+            font-size: 1.1rem;
+            font-family: 'Amiri', serif;
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--light-secondary);
+        }
+        
+        /* Media Grid */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
         .media-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            transition: transform 0.3s;
         }
-
-        .media-player {
+        
+        .media-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .media-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .media-content {
+            padding: 1.5rem;
+        }
+        
+        /* Books Grid */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .book-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .book-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-accent);
+            margin-bottom: 1rem;
+        }
+        
+        /* Schedule */
+        .schedule-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Forms */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light-secondary);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light-text);
+            font-family: 'Amiri', serif;
+            font-size: 1rem;
+        }
+        
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary-accent);
+            margin-bottom: 1rem;
+        }
+        
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: var(--primary-accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        /* Lazy Loading */
+        .lazy {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .lazy-loaded {
+            opacity: 1;
+        }
+        
+        /* AI Course Section */
+        .ai-course-container {
+            background: linear-gradient(145deg, rgba(0,184,148,0.1) 0%, rgba(9,132,227,0.1) 100%);
+            border-radius: 30px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+        
+        .playlist-embed {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
-            background: #000;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-
-        .media-player iframe {
+        
+        .playlist-embed iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            border: none;
         }
-
-        .media-info {
-            padding: 15px;
-        }
-
-        /* --- Book Section --- */
-        .books-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .book-card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            cursor: pointer;
-            transition: transform 0.3s;
-            border-top: 4px solid var(--secondary);
-        }
-
-        .book-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .book-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: var(--dark);
-            color: #ccc;
-            padding: 40px 0;
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        /* --- Responsive --- */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: var(--primary);
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                padding: 20px;
-                text-align: center;
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.8rem;
             }
-            .nav-links.active { display: flex; }
-            .mobile-menu-btn { display: block; }
-            .hero h2 { font-size: 1.8rem; }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--dark-bg);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .ai-course-container {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="container header-inner">
+    <!-- Navigation -->
+    <header class="sticky-header">
+        <div class="container nav-container">
             <div class="logo">
-                <div style="width: 50px; height: 50px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary); font-weight:bold;">م</div>
-                <div>
-                    <h1>مفتی محمد سہیل خان شیرانی</h1>
-                    <small>اسلامی علوم و فتاویٰ جات</small>
-                </div>
+                <h1>مفتی محمد سہیل خان شیرانی</h1>
             </div>
             
-            <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="مینو کھولیں">
+                <i class="fas fa-bars"></i>
+            </button>
             
             <nav>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#"><i class="fas fa-home"></i> ہوم</a></li>
-                    <li><a href="#fatawa"><i class="fas fa-book"></i> فتاویٰ</a></li>
-                    <li><a href="#books"><i class="fas fa-book-open"></i> کتب</a></li>
-                    <li><a href="#media"><i class="fas fa-video"></i> بیانات</a></li>
-                    <li><a href="#contact"><i class="fas fa-phone-alt"></i> رابطہ</a></li>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link">ہوم</a></li>
+                    <li><a href="#services" class="nav-link">خدمات</a></li>
+                    <li><a href="#fatawa" class="nav-link">فتاویٰ</a></li>
+                    <li><a href="#statements" class="nav-link">بیانات</a></li>
+                    <li><a href="#ai-course" class="nav-link">AI کورس</a></li>
+                    <li><a href="#books" class="nav-link">کتب</a></li>
+                    <li><a href="#schedule" class="nav-link">شیڈول</a></li>
+                    <li><a href="#guidance" class="nav-link">طلبہ رہنمائی</a></li>
+                    <li><a href="#qa" class="nav-link">سوال و جواب</a></li>
+                    <li><a href="#contact" class="nav-link">رابطہ</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="section-padding" style="background: white;">
-        <div class="container">
-            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
-                <h2 style="font-size: 2.2rem; margin-bottom: 20px;">تعارفِ شخصیت</h2>
-                <p style="font-size: 1.2rem;">مفتی محمد سہیل خان شیرانی حفظہ اللہ کا شمار پاکستان کے ان مخلص علماء میں ہوتا ہے جنہوں نے دورِ حاضر کی ضروریات کو سمجھتے ہوئے دین کی خدمت کی۔ آپ فاضلِ دارالعلوم کراچی ہیں اور مفتی محمد تقی عثمانی صاحب کے شاگردوں میں سے ہیں۔</p>
-                <p>آپ نے دینی علوم کے ساتھ ساتھ جدید ٹیکنالوجی اور آرٹیفیشل انٹیلیجنس (Google Certified) میں بھی مہارت حاصل کی ہے۔</p>
-                
-                <div class="social-container">
-                    <a href="https://www.facebook.com/MuftiSuhailKhanSherani" target="_blank" class="social-btn fb">
-                        <i class="fab fa-facebook-f"></i> فیس بک
-                    </a>
-                    <a href="https://www.tiktok.com/@MuftiSuhailSherani" target="_blank" class="social-btn tt">
-                        <i class="fab fa-tiktok"></i> ٹک ٹاک
-                    </a>
-                    <a href="https://www.youtube.com/@IslamicInformative-t1x" target="_blank" class="social-btn yt">
-                        <i class="fab fa-youtube"></i> یوٹیوب چینل
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="hero">
-        <div class="container">
-            <h2>علم دین کی روشنی سے اپنی زندگی منور کریں</h2>
-            <p>مفتی محمد سہیل خان شیرانی کی معتبر اسلامی رہنمائی اور فتاویٰ جات تک رسائی حاصل کریں</p>
-            <div style="margin-top: 30px;">
-                <a href="#fatawa" class="btn">فتاویٰ تلاش کریں</a>
-                <a href="#media" class="btn btn-outline">ویڈیوز دیکھیں</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Google Sheet کا سیکشن مکمل ہٹا دیا گیا ہے -->
-
-    <section class="section-padding" id="media" style="background: #f8f9fa;">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 30px;">درس و تدریس (میڈیا)</h2>
-
-            <div class="tabs-container">
-                <button class="tab-btn active" onclick="openTab('videos')">ویڈیو لیکچرز</button>
-                <button class="tab-btn" onclick="openTab('audios')">آڈیو خطبات</button>
-            </div>
-
-            <div id="videos" class="tab-content active">
-                <!-- پہلی ویڈیو -->
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/jZ8_coH0LP0?si=MMR176u2HYv0bpcW" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info">
-                        <h3>ویڈیو لیکچر 1</h3>
-                        <span><i class="fas fa-calendar"></i> 15 مئی 2025</span>
-                    </div>
-                </div>
-
-                <!-- دوسری ویڈیو (پلے لسٹ) - پہلے والی -->
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Ic-ew7B_l7RagT224yP5x9" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info">
-                        <h3>ویڈیو لیکچر 2 (پلے لسٹ)</h3>
-                        <span><i class="fas fa-list"></i> مکمل پلے لسٹ</span>
-                    </div>
-                </div>
-
-                <!-- باقی ویڈیوز -->
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/6XTTyHTBNDo?si=MHGhAsMcE0fgErkt" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info">
-                        <h3>ویڈیو لیکچر 3</h3>
-                    </div>
-                </div>
-
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/tErmzkV37lI?start=34" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info"><h3>ویڈیو لیکچر 4</h3></div>
-                </div>
-
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/JIraoRP23bA" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info"><h3>ویڈیو لیکچر 5</h3></div>
-                </div>
-
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/UCqJ6-rHGso" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info"><h3>ویڈیو لیکچر 6</h3></div>
-                </div>
-
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/7Gl-_jtzVAw?si=Xr4NBy7LnwgSnMsM" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info"><h3>ویڈیو لیکچر 7</h3></div>
-                </div>
-
-                <!-- آپ کی دی گئی خصوصی ویڈیو -->
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/9hpFZ7urHuQ?si=poiFI5PVhxYyD8rf" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info">
-                        <h3>خصوصی ویڈیو</h3>
-                        <span><i class="fas fa-calendar"></i> نیا بیان</span>
-                    </div>
-                </div>
-
-                <!-- نئی پلے لسٹ 1 -->
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_LFVGGiN5xPPXGTCsAL4_JF" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info">
-                        <h3>پلے لسٹ 1</h3>
-                        <span><i class="fas fa-list"></i> مزید بیانات</span>
-                    </div>
-                </div>
-
-                <!-- نئی پلے لسٹ 2 -->
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_JUoz4oloCSVZ8v3uF6yoYL" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info">
-                        <h3>پلے لسٹ 2</h3>
-                        <span><i class="fas fa-list"></i> خصوصی دروس</span>
-                    </div>
-                </div>
-
-                <!-- نئی پلے لسٹ 3 -->
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Iip83N1ZOehZIZ11jtA2N5" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info">
-                        <h3>پلے لسٹ 3</h3>
-                        <span><i class="fas fa-list"></i> مسائل و حل</span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="audios" class="tab-content">
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/D6Ac5JpCHmI" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info">
-                        <h3>تقویٰ کی اہمیت اور اس کے مراتب</h3>
-                        <p><i class="fas fa-headphones"></i> آڈیو خطبہ</p>
-                    </div>
-                </div>
-
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/UkWd0azv3fQ" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info">
-                        <h3>قرآن فہمی کی ضرورت</h3>
-                    </div>
-                </div>
-
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/7cjVj1ZyzyE" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info">
-                        <h3>دعا کی قبولیت کے اوقات</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="https://www.youtube.com/@IslamicInformative-t1x" target="_blank" class="btn">
-                    <i class="fas fa-list"></i> تمام ویڈیوز/آڈیوز دیکھیں
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1 class="sr-only">مفتی محمد سہیل خان شیرانی</h1>
+            <h2>مفتی محمد سہیل خان شیرانی</h2>
+            <p>مستند اسلامی فتاویٰ، بیانات، کتب اور جدید دینی رہنمائی کی ایک جامع ویب پورٹل</p>
+            
+            <div class="cta-buttons">
+                <a href="#fatawa" class="btn btn-primary">
+                    <i class="fas fa-search"></i> ابھی فتاویٰ تلاش کریں
+                </a>
+                <a href="#statements" class="btn btn-secondary">
+                    <i class="fas fa-headphones"></i> بیانات سنیں
+                </a>
+                <a href="#books" class="btn btn-primary">
+                    <i class="fas fa-download"></i> کتب ڈاؤنلوڈ کریں
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-phone-alt"></i> رابطہ کریں
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="section-padding" id="fatawa" style="background: white;">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 40px;">منتخب فتاویٰ جات</h2>
-            <div style="display: grid; gap: 20px;">
+    <!-- Services Section -->
+    <section id="services">
                 
-                <div style="background: #fdfdfd; padding: 20px; border-right: 5px solid var(--primary); box-shadow: var(--shadow);">
-                    <h3 style="font-size: 1.3rem;"><i class="fas fa-exclamation-circle"></i> تشدد برائے اصلاح اور مدارس کا کردار</h3>
-                    <p>اسلامی فقہ میں اصلاحی تادیب کی اجازت صرف شرائط کے ساتھ دی گئی ہے۔ شدید مار نہیں دی جا سکتی اور چہرے پر مارنا حرام ہے۔ جو استاد حد سے تجاوز کرے وہ گناہگار ہے۔</p>
-                </div>
-
-                <div style="background: #fdfdfd; padding: 20px; border-right: 5px solid var(--secondary); box-shadow: var(--shadow);">
-                    <h3 style="font-size: 1.3rem;"><i class="fas fa-coins"></i> زیورات پر زکوٰۃ</h3>
-                    <p>سونے اور چاندی کے زیورات اگر نصاب (سونا: 87.48 گرام) کو پہنچ جائیں تو ان پر زکوٰۃ واجب ہے۔</p>
-                </div>
-
-                <div style="background: #fdfdfd; padding: 20px; border-right: 5px solid var(--primary); box-shadow: var(--shadow);">
-                    <h3 style="font-size: 1.3rem;"><i class="fas fa-utensils"></i> مشکوک گوشت کا حکم</h3>
-                    <p>شرعی اصول یہ ہے کہ جب تک کسی چیز کے حرام ہونے کی واضح دلیل نہ ملے، وہ حلال ہے۔</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" id="books" style="background: #f0f8ff;">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 40px;">تصنیفات و کتب (ڈاؤنلوڈ)</h2>
-            <div class="books-grid">
-                
-                <div class="book-card" onclick="window.open('https://drive.google.com/uc?export=download&id=1fwk-DMM_UOCTSIpLdVbqdungotCKbWmN')">
-                    <div class="book-icon"><i class="fas fa-book"></i></div>
-                    <h3>التحقیقات لدفع التلبیسات</h3>
-                    <p>فتنہ سیفیت وبریلویت کے رد میں تصنیف</p>
-                    <span style="color: var(--secondary); font-size: 0.9rem;">(کلک کریں اور ڈاؤنلوڈ کریں)</span>
-                </div>
-
-                <div class="book-card" onclick="window.open('https://drive.google.com/file/d/1abc123def456ghi789xyz/view?usp=sharing')">
-                    <div class="book-icon"><i class="fas fa-mosque"></i></div>
-                    <h3>بدعتی کے پیچھے نماز کا مسئلہ</h3>
-                    <p>فقہی دلائل پر مشتمل رسالہ</p>
-                </div>
-
-                <div class="book-card" onclick="window.open('https://drive.google.com/file/d/1xyz999uvw888rst666/view?usp=sharing')">
-                    <div class="book-icon"><i class="fas fa-pen-nib"></i></div>
-                    <h3>عثمانی فرقے کے نظریات</h3>
-                    <p>ایک فتنۂ نوپید کا تفصیلی رد</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" id="contact" style="background: var(--dark); color: white;">
-        <div class="container">
-            <h2 style="text-align: center; color: white; margin-bottom: 40px;">رابطہ کریں</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-                
-                <div>
-                    <div style="margin-bottom: 20px;">
-                        <i class="fas fa-map-marker-alt" style="color: var(--secondary); font-size: 1.5rem;"></i>
-                        <span style="font-size: 1.2rem; margin-right: 10px;">شیرانی کالونی، کیڈٹ کالج روڈ، ضلع پشین، بلوچستان</span>
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <i class="fas fa-phone" style="color: var(--secondary); font-size: 1.5rem;"></i>
-                        <span style="font-size: 1.2rem; margin-right: 10px;">+92 3033823350</span>
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <i class="fas fa-envelope" style="color: var(--secondary); font-size: 1.5rem;"></i>
-                        <span style="font-size: 1.2rem; margin-right: 10px;">ksherani73@.com</span>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 style="color: var(--secondary);">سوشل میڈیا</h3>
-                    <div style="display: flex; gap: 15px; margin-top: 15px;">
-                        <a href="https://www.facebook.com/MuftiSuhailKhanSherani" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.youtube.com/@IslamicInformative-t1x" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.tiktok.com/@MuftiSuhailSherani" target="_blank" style="color: white; font-size: 1.5rem;"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2025 مفتی محمد سہیل خان شیرانی۔ تمام حقوق محفوظ ہیں۔</p>
-            <p>بمطابق اسلامی اصول و ضوابط</p>
-        </div>
-    </footer>
-
-    <script>
-        // موبائل مینو ٹوگل
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.getElementById('nav-links');
-
-        mobileBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-
-        // ٹیبز (ویڈیو/آڈیو) فنکشن
-        function openTab(tabName) {
-            var i;
-            var tabContent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].classList.remove("active");
-            }
-            var tabBtns = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tabBtns.length; i++) {
-                tabBtns[i].classList.remove("active");
-            }
-            document.getElementById(tabName).classList.add("active");
-            event.target.classList.add("active");
-        }
-
-        // ڈراپ ڈاؤن کو کلک کرنے پر خودکار بند
-        document.addEventListener('click', function(event) {
-            if (!mobileBtn.contains(event.target) && !navLinks.contains(event.target)) {
-                navLinks.classList.remove('active');
-            }
-        });
-    </script>
-</body>
-</html>
