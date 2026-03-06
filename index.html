@@ -3,42 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مفتی سہیل شیرانی | مستند فتاویٰ، بیانات، کتب</title>
+    <title>مفتی سہیل شیرانی | مستند فتاویٰ، بیانات، کتب و رہنمائی</title>
     
-    <!-- Basic Meta Tags -->
-    <meta name="description" content="مفتی سہیل شیرانی کی آفیشل ویب سائٹ — مستند اسلامی فتاویٰ، بیانات، کتب">
+    <!-- Meta Tags -->
+    <meta name="description" content="مفتی سہیل شیرانی کی آفیشل ویب سائٹ — مستند اسلامی فتاویٰ، بیانات، کتب، اور جدید دینی رہنمائی۔">
     
-    <!-- Font Awesome (CDN - کام کرے گا) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="مفتی سہیل شیرانی | مستند فتاویٰ، بیانات، کتب و رہنمائی">
+    <meta property="og:description" content="مفتی سہیل شیرانی کی آفیشل ویب سائٹ — مستند اسلامی فتاویٰ، بیانات، کتب، اور جدید دینی رہنمائی۔">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560421683-2588f3e620b3?auto=format&fit=crop&w=1200&q=80">
     
-    <!-- Google Fonts (کام کرے گا) -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="مفتی سہیل شیرانی | مستند فتاویٰ، بیانات، کتب و رہنمائی">
+    <meta name="twitter:description" content="مفتی سہیل شیرانی کی آفیشل ویب سائٹ — مستند اسلامی فتاویٰ، بیانات، کتب، اور جدید دینی رہنمائی۔">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "مفتی محمد سہیل خان شیرانی",
+        "description": "اسلامی عالم، مفتی اور مصنف",
+        "url": "https://www.muftisuhail.com",
+        "sameAs": [
+            "https://www.facebook.com/MuftiSuhailKhanSherani",
+            "https://www.youtube.com/@IslamicInformative-t1x"
+        ]
+    }
+    </script>
     
     <style>
-        /* سادہ اور کام کرنے والا CSS */
+        /* --- General Settings --- */
+        :root {
+            --primary: #0a5f38;
+            --secondary: #d4af37;
+            --light: #f4f7f6;
+            --dark: #2c3e50;
+            --white: #ffffff;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Amiri', 'Noto Nastaliq Urdu', serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            line-height: 1.8;
+            line-height: 2;
+            background-color: var(--light);
+            color: #333;
+            overflow-x: hidden;
         }
-        
-        /* Container */
+
+        h1, h2, h3 {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            color: var(--primary);
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        /* Header */
+
+        .section-padding { padding: 60px 0; }
+
+        /* --- Header --- */
         header {
-            background: #0a5f38;
+            background: linear-gradient(135deg, var(--primary), #053b23);
             color: white;
             padding: 15px 0;
             position: sticky;
@@ -46,206 +91,189 @@
             z-index: 1000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        
+
         .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .logo h1 {
-            color: #d4a017;
-            font-size: 1.5rem;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        
+
+        .logo h1 {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        /* Navigation */
         .nav-links {
             display: flex;
             gap: 20px;
-            list-style: none;
         }
-        
+
         .nav-links a {
             color: white;
-            text-decoration: none;
             font-size: 1.1rem;
             padding: 5px 10px;
             border-radius: 5px;
         }
-        
+
         .nav-links a:hover {
-            background: #d4a017;
-            color: #0a5f38;
+            background: rgba(255,255,255,0.1);
+            color: var(--secondary);
         }
-        
+
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
             color: white;
-            font-size: 2rem;
+            font-size: 1.5rem;
             cursor: pointer;
         }
-        
-        /* Hero Section */
+
+        /* --- Hero Section --- */
         .hero {
-            background: linear-gradient(rgba(10,95,56,0.9), rgba(5,59,35,0.9)), url('https://images.unsplash.com/photo-1560421683-2588f3e620b3?w=1200');
+            background: linear-gradient(rgba(10, 95, 56, 0.9), rgba(10, 61, 31, 0.8)), url('https://images.unsplash.com/photo-1560421683-2588f3e620b3?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
             padding: 100px 20px;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
             margin-bottom: 20px;
-            color: #d4a017;
         }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-        }
-        
-        /* Buttons */
+
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            margin: 5px;
+            background: var(--secondary);
+            color: white;
             border-radius: 50px;
-            text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s;
+            border: 2px solid var(--secondary);
+            cursor: pointer;
+            transition: all 0.3s;
         }
-        
-        .btn-primary {
-            background: #d4a017;
-            color: #0a5f38;
+
+        .btn:hover {
+            background: transparent;
+            color: var(--secondary);
         }
-        
-        .btn-primary:hover {
-            background: #f5b81b;
-            transform: translateY(-3px);
-        }
-        
-        .btn-secondary {
+
+        .btn-outline {
             background: transparent;
             border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* --- Social Links --- */
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .fb { background: #1877F2; }
+        .tt { background: #000000; }
+        .yt { background: #FF0000; }
+        
+        .social-btn:hover { transform: translateY(-3px); }
+
+        /* --- Media Section (Tabs) --- */
+        .tabs-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            padding: 10px 30px;
+            margin: 5px;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
             color: white;
         }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #0a5f38;
-        }
-        
-        /* Sections */
-        section {
-            padding: 60px 0;
-        }
-        
-        section:nth-child(even) {
-            background: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: #0a5f38;
-            display: inline-block;
-            border-bottom: 4px solid #d4a017;
-            padding-bottom: 10px;
-        }
-        
-        /* Cards Grid */
-        .grid-3, .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .card {
-            background: #f8fafc;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            border-bottom: 4px solid #d4a017;
-        }
-        
-        .card i {
-            font-size: 3rem;
-            color: #0a5f38;
-            margin-bottom: 15px;
-        }
-        
-        .card h3 {
-            color: #0a5f38;
-            margin-bottom: 10px;
-        }
-        
-        /* Fatwa Items */
-        .fatwa-item {
-            background: #f8fafc;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-right: 5px solid #d4a017;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .fatwa-item h3 {
-            color: #0a5f38;
-            margin-bottom: 10px;
-        }
-        
-        /* Media Grid */
-        .media-grid {
-            display: grid;
+
+        .tab-content {
+            display: none;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
-        
+
+        .tab-content.active {
+            display: grid;
+        }
+
         .media-card {
-            background: #f8fafc;
-            border-radius: 15px;
+            background: white;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
         }
-        
-        .media-card img {
+
+        .media-player {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background: #000;
+        }
+
+        .media-player iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 100%;
         }
-        
+
         .media-info {
-            padding: 20px;
+            padding: 15px;
         }
-        
-        .media-info h3 {
-            color: #0a5f38;
-            margin-bottom: 10px;
+
+        /* --- AI Course Section (Newly Added) --- */
+        .ai-course-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: var(--shadow);
         }
-        
-        .btn-small {
-            display: inline-block;
-            padding: 8px 20px;
-            background: #d4a017;
-            color: #0a5f38;
-            text-decoration: none;
-            border-radius: 30px;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        
-        /* Playlist Container (AI Course) */
+
         .playlist-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -254,7 +282,7 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
-        
+
         .playlist-container iframe {
             position: absolute;
             top: 0;
@@ -263,76 +291,88 @@
             height: 100%;
             border: none;
         }
-        
-        /* Books Grid */
+
+        /* --- Book Section --- */
         .books-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
-        
+
         .book-card {
-            background: #f8fafc;
+            background: white;
+            padding: 20px;
             border-radius: 15px;
-            padding: 25px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-top: 4px solid var(--secondary);
         }
-        
-        .book-card i {
+
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-icon {
             font-size: 3rem;
-            color: #0a5f38;
+            color: var(--primary);
             margin-bottom: 15px;
         }
-        
-        .book-card h3 {
-            color: #0a5f38;
-            margin-bottom: 10px;
-        }
-        
+
         .download-btn {
             display: inline-block;
-            padding: 8px 20px;
-            background: #d4a017;
-            color: #0a5f38;
-            text-decoration: none;
-            border-radius: 30px;
             margin-top: 15px;
+            padding: 8px 20px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            background: var(--primary);
+        }
+
+        /* --- Google Sheet --- */
+        .google-sheet-container {
+            width: 100%;
+            height: 500px;
+            margin: 40px 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
         }
         
-        /* Schedule Box */
-        .schedule-box {
-            background: #f8fafc;
-            border-radius: 15px;
-            padding: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
+        .google-sheet-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
-        
-        /* Form */
+
+        /* --- Forms --- */
         .form-container {
             max-width: 700px;
             margin: 0 auto;
-            background: #f8fafc;
-            border-radius: 15px;
+            background: white;
+            border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
-            color: #0a5f38;
+            color: var(--primary);
         }
-        
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -342,45 +382,45 @@
             font-family: 'Amiri', serif;
             font-size: 1rem;
         }
-        
+
         .form-group textarea {
             min-height: 120px;
         }
-        
-        /* Contact Grid */
+
+        /* --- Contact Grid --- */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin: 40px 0;
         }
-        
+
         .contact-card {
-            background: #f8fafc;
+            background: white;
             border-radius: 15px;
             padding: 25px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
         }
-        
+
         .contact-card i {
             font-size: 2.5rem;
-            color: #0a5f38;
+            color: var(--primary);
             margin-bottom: 15px;
         }
-        
+
         .social-links {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-top: 30px;
         }
-        
+
         .social-link {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: #0a5f38;
+            background: var(--primary);
             color: white;
             display: flex;
             align-items: center;
@@ -389,230 +429,227 @@
             font-size: 1.5rem;
             transition: 0.3s;
         }
-        
+
         .social-link:hover {
-            background: #d4a017;
+            background: var(--secondary);
             transform: translateY(-5px);
         }
-        
-        /* Footer */
+
+        /* --- Footer --- */
         footer {
-            background: #1e293b;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
+            background: var(--dark);
+            color: #ccc;
+            padding: 40px 0;
+            margin-top: 50px;
         }
-        
-        /* Responsive */
+
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: #0a5f38;
                 flex-direction: column;
+                background: var(--primary);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
                 padding: 20px;
-                gap: 15px;
                 text-align: center;
             }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .hero h2 { font-size: 1.8rem; }
+            .ai-course-section { padding: 20px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header>
         <div class="container header-inner">
             <div class="logo">
-                <h1>مفتی محمد سہیل خان شیرانی</h1>
+                <div style="width: 50px; height: 50px; background:white; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary); font-weight:bold;">م</div>
+                <div>
+                    <h1>مفتی محمد سہیل خان شیرانی</h1>
+                    <small>اسلامی علوم و فتاویٰ جات</small>
+                </div>
             </div>
             
-            <button class="mobile-menu-btn" id="menuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
             
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">ہوم</a></li>
-                <li><a href="#services">خدمات</a></li>
-                <li><a href="#fatawa">فتاویٰ</a></li>
-                <li><a href="#statements">بیانات</a></li>
-                <li><a href="#ai-course">AI کورس</a></li>
-                <li><a href="#books">کتب</a></li>
-                <li><a href="#schedule">شیڈول</a></li>
-                <li><a href="#guidance">طلبہ</a></li>
-                <li><a href="#qa">سوال</a></li>
-                <li><a href="#contact">رابطہ</a></li>
-            </ul>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home"><i class="fas fa-home"></i> ہوم</a></li>
+                    <li><a href="#fatawa"><i class="fas fa-book"></i> فتاویٰ</a></li>
+                    <li><a href="#books"><i class="fas fa-book-open"></i> کتب</a></li>
+                    <li><a href="#media"><i class="fas fa-video"></i> بیانات</a></li>
+                    <li><a href="#ai-course"><i class="fas fa-robot"></i> AI کورس</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone-alt"></i> رابطہ</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>مفتی محمد سہیل خان شیرانی</h1>
-            <p>مستند اسلامی فتاویٰ، بیانات، کتب اور جدید رہنمائی</p>
-            <div>
-                <a href="#fatawa" class="btn btn-primary"><i class="fas fa-search"></i> فتاویٰ تلاش کریں</a>
-                <a href="#statements" class="btn btn-secondary"><i class="fas fa-headphones"></i> بیانات سنیں</a>
-                <a href="#books" class="btn btn-primary"><i class="fas fa-download"></i> کتب ڈاؤنلوڈ</a>
-                <a href="#contact" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> رابطہ کریں</a>
+            <h2>مفتی محمد سہیل خان شیرانی</h2>
+            <p>مستند اسلامی فتاویٰ، بیانات، کتب اور جدید دینی رہنمائی کی ایک جامع ویب پورٹل</p>
+            
+            <div class="cta-buttons" style="margin-top: 30px;">
+                <a href="#fatawa" class="btn">فتاویٰ تلاش کریں</a>
+                <a href="#media" class="btn btn-outline">بیانات سنیں</a>
+                <a href="#books" class="btn">کتب ڈاؤنلوڈ کریں</a>
+                <a href="#contact" class="btn btn-outline">رابطہ کریں</a>
             </div>
         </div>
     </section>
 
-    <!-- Services -->
-    <section id="services">
+    <section class="section-padding" style="background: white;">
         <div class="container">
-            <div class="section-title">
-                <h2>ہماری خدمات</h2>
-            </div>
-            <div class="grid-3">
-                <div class="card">
-                    <i class="fas fa-balance-scale"></i>
-                    <h3>مستند فتاویٰ</h3>
-                    <p>جدید مسائل کا شرعی حل قرآن و سنت کی روشنی میں</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-microphone-alt"></i>
-                    <h3>بیانات و خطبات</h3>
-                    <p>مختلف موضوعات پر مفتی صاحب کے قیمتی بیانات</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>کتب و رسائل</h3>
-                    <p>عقیدہ، فقہ اور جدید مسائل پر مفید کتب</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fatawa -->
-    <section id="fatawa">
-        <div class="container">
-            <div class="section-title">
-                <h2>فتاویٰ جات</h2>
-            </div>
-            
-            <div class="fatwa-item">
-                <h3><i class="fas fa-circle" style="color: #d4a017; font-size: 0.8rem;"></i> زیورات پر زکوٰۃ</h3>
-                <p>سونے اور چاندی کے زیورات اگر نصاب کو پہنچ جائیں تو ان پر زکوٰۃ واجب ہے۔</p>
-            </div>
-            
-            <div class="fatwa-item">
-                <h3><i class="fas fa-circle" style="color: #d4a017; font-size: 0.8rem;"></i> مشکوک گوشت کا حکم</h3>
-                <p>جب تک کسی چیز کے حرام ہونے کا یقین نہ ہو، وہ حلال ہے۔</p>
-            </div>
-            
-            <div class="fatwa-item">
-                <h3><i class="fas fa-circle" style="color: #d4a017; font-size: 0.8rem;"></i> بینک اکاؤنٹ اور سود</h3>
-                <p>سودی بینک میں اکاؤنٹ رکھنا اور سود لینا حرام ہے۔</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statements -->
-    <section id="statements">
-        <div class="container">
-            <div class="section-title">
-                <h2>بیانات و خطبات</h2>
-            </div>
-            
-            <div class="media-grid">
-                <div class="media-card">
-                    <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?w=400" alt="بیان">
-                    <div class="media-info">
-                        <h3>دور حاضر کے فتنے</h3>
-                        <p>خصوصی خطبہ جمعہ</p>
-                        <a href="#" class="btn-small"><i class="fas fa-play"></i> سنیں</a>
-                    </div>
-                </div>
-                <div class="media-card">
-                    <img src="https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?w=400" alt="بیان">
-                    <div class="media-info">
-                        <h3>نوجوانوں کے لیے نصیحت</h3>
-                        <p>خصوصی دورس برائے طلبہ</p>
-                        <a href="#" class="btn-small"><i class="fas fa-play"></i> سنیں</a>
-                    </div>
-                </div>
-                <div class="media-card">
-                    <img src="https://images.unsplash.com/photo-1590424746022-e2a6f1c2d7a1?w=400" alt="بیان">
-                    <div class="media-info">
-                        <h3>رمضان المبارک کی تیاری</h3>
-                        <p>ماہ رمضان سے متعلق مسائل</p>
-                        <a href="#" class="btn-small"><i class="fas fa-play"></i> سنیں</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Course -->
-    <section id="ai-course">
-        <div class="container">
-            <div class="section-title">
-                <h2>علماء کے لیے AI کورس</h2>
-            </div>
-            
-            <div style="background: #f8fafc; border-radius: 20px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                <div class="playlist-container">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" title="AI Course" allowfullscreen></iframe>
-                </div>
-                <div style="text-align: center; margin-top: 20px;">
-                    <p style="font-size: 1.2rem;">🔹 جدید مصنوعی ذہانت (AI) کا خصوصی کورس</p>
-                    <a href="https://www.youtube.com/playlist?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" target="_blank" class="btn btn-primary" style="margin-top: 10px;">
-                        <i class="fab fa-youtube"></i> یوٹیوب پر دیکھیں
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <h2 style="font-size: 2.2rem; margin-bottom: 20px;">تعارفِ شخصیت</h2>
+                <p style="font-size: 1.2rem;">مفتی محمد سہیل خان شیرانی حفظہ اللہ کا شمار پاکستان کے ان مخلص علماء میں ہوتا ہے جنہوں نے دورِ حاضر کی ضروریات کو سمجھتے ہوئے دین کی خدمت کی۔ آپ فاضلِ دارالعلوم کراچی ہیں اور مفتی محمد تقی عثمانی صاحب کے شاگردوں میں سے ہیں۔</p>
+                
+                <div class="social-container">
+                    <a href="https://www.facebook.com/MuftiSuhailKhanSherani" target="_blank" class="social-btn fb">
+                        <i class="fab fa-facebook-f"></i> فیس بک
+                    </a>
+                    <a href="https://www.youtube.com/@IslamicInformative-t1x" target="_blank" class="social-btn yt">
+                        <i class="fab fa-youtube"></i> یوٹیوب
+                    </a>
+                    <a href="https://www.tiktok.com/@MuftiSuhailSherani" target="_blank" class="social-btn tt">
+                        <i class="fab fa-tiktok"></i> ٹک ٹاک
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Books -->
-    <section id="books">
+    <!-- AI Course Section (Newly Added) -->
+    <section id="ai-course" class="section-padding">
         <div class="container">
-            <div class="section-title">
-                <h2>کتب خانہ</h2>
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem; color: var(--primary);">علماء کے لیے AI کورس</h2>
+                <p style="font-size: 1.2rem;">جدید مصنوعی ذہانت کی تعلیم خصوصاً علماء کے لیے</p>
             </div>
             
+            <div class="ai-course-section">
+                <div class="playlist-container">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" title="AI course For scholar" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <p style="font-size: 1.2rem; margin-bottom: 15px;">🔹 جدید مصنوعی ذہانت (AI) کا خصوصی کورس برائے علماء کرام</p>
+                    <a href="https://www.youtube.com/playlist?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" target="_blank" class="btn" style="background: var(--primary); border-color: var(--primary);">
+                        <i class="fab fa-youtube"></i> یوٹیوب پر مکمل پلے لسٹ دیکھیں
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="media" class="section-padding" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 30px;">درس و تدریس (بیانات)</h2>
+
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="openTab('videos')">ویڈیو لیکچرز</button>
+                <button class="tab-btn" onclick="openTab('audios')">آڈیو خطبات</button>
+            </div>
+
+            <div id="videos" class="tab-content active">
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/jZ8_coH0LP0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>ویڈیو لیکچر 1</h3>
+                    </div>
+                </div>
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/ShVKh6vCfZ8" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>ویڈیو لیکچر 2</h3>
+                    </div>
+                </div>
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/6XTTyHTBNDo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>ویڈیو لیکچر 3</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="audios" class="tab-content">
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/D6Ac5JpCHmI" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>تقویٰ کی اہمیت</h3>
+                    </div>
+                </div>
+                <div class="media-card">
+                    <div class="media-player">
+                        <iframe src="https://www.youtube.com/embed/UkWd0azv3fQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media-info">
+                        <h3>قرآن فہمی کی ضرورت</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fatawa" class="section-padding" style="background: white;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">منتخب فتاویٰ جات</h2>
+            <div style="display: grid; gap: 20px;">
+                
+                <div style="background: #fdfdfd; padding: 20px; border-right: 5px solid var(--primary); box-shadow: var(--shadow);">
+                    <h3 style="font-size: 1.3rem;"><i class="fas fa-exclamation-circle"></i> زیورات پر زکوٰۃ</h3>
+                    <p>سونے اور چاندی کے زیورات اگر نصاب (سونا: 87.48 گرام) کو پہنچ جائیں تو ان پر زکوٰۃ واجب ہے۔</p>
+                </div>
+
+                <div style="background: #fdfdfd; padding: 20px; border-right: 5px solid var(--secondary); box-shadow: var(--shadow);">
+                    <h3 style="font-size: 1.3rem;"><i class="fas fa-utensils"></i> مشکوک گوشت کا حکم</h3>
+                    <p>شرعی اصول یہ ہے کہ جب تک کسی چیز کے حرام ہونے کی واضح دلیل نہ ملے، وہ حلال ہے۔</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="books" class="section-padding" style="background: #f0f8ff;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">تصنیفات و کتب</h2>
             <div class="books-grid">
+                
                 <div class="book-card">
-                    <i class="fas fa-book-quran"></i>
+                    <div class="book-icon"><i class="fas fa-book"></i></div>
                     <h3>التحقیقات لدفع التلبیسات</h3>
-                    <p>فتنہ سیفیت و بریلویت کا رد</p>
+                    <p>فتنہ سیفیت و بریلویت کے رد میں</p>
                     <a href="#" class="download-btn"><i class="fas fa-download"></i> ڈاؤنلوڈ</a>
                 </div>
+
                 <div class="book-card">
-                    <i class="fas fa-mosque"></i>
+                    <div class="book-icon"><i class="fas fa-mosque"></i></div>
                     <h3>بدعتی کے پیچھے نماز</h3>
-                    <p>فقہی دلائل کے ساتھ تحقیق</p>
+                    <p>فقہی دلائل پر مشتمل رسالہ</p>
                     <a href="#" class="download-btn"><i class="fas fa-download"></i> ڈاؤنلوڈ</a>
                 </div>
+
                 <div class="book-card">
-                    <i class="fas fa-pen-nib"></i>
-                    <h3>عثمانی فرقے کا علمی جائزہ</h3>
-                    <p>نوپیدا فرقے کا رد</p>
+                    <div class="book-icon"><i class="fas fa-pen-nib"></i></div>
+                    <h3>عثمانی فرقے کے نظریات</h3>
+                    <p>ایک فتنۂ نوپید کا تفصیلی رد</p>
                     <a href="#" class="download-btn"><i class="fas fa-download"></i> ڈاؤنلوڈ</a>
                 </div>
+
                 <div class="book-card">
-                    <i class="fas fa-hand-holding-heart"></i>
+                    <div class="book-icon"><i class="fas fa-hand-holding-heart"></i></div>
                     <h3>زکوٰۃ کے جدید مسائل</h3>
                     <p>عصری مسائل کا فقہی حل</p>
                     <a href="#" class="download-btn"><i class="fas fa-download"></i> ڈاؤنلوڈ</a>
@@ -621,16 +658,12 @@
         </div>
     </section>
 
-    <!-- Schedule -->
-    <section id="schedule">
+    <section id="schedule" class="section-padding">
         <div class="container">
-            <div class="section-title">
-                <h2>شیڈول و تقویم</h2>
-            </div>
-            
-            <div class="schedule-box">
-                <i class="fas fa-calendar-alt" style="font-size: 3rem; color: #0a5f38; margin-bottom: 20px;"></i>
-                <h3 style="color: #0a5f38; margin-bottom: 20px;">اس ہفتے کے پروگرامز</h3>
+            <h2 style="text-align: center; margin-bottom: 30px;">شیڈول / اپڈیٹس</h2>
+            <div class="schedule-box" style="background: white; border-radius: 15px; padding: 30px; text-align: center; box-shadow: var(--shadow);">
+                <i class="fas fa-calendar-alt" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--primary);">اس ہفتے کے پروگرامز</h3>
                 <p>🔸 جمعہ: خطبہ جمعہ بعد نماز عصر</p>
                 <p>🔸 ہفتہ: درس بخاری شریف (بعد مغرب)</p>
                 <p>🔸 اتوار: آن لائن سوال و جواب (رات 8 بجے)</p>
@@ -638,26 +671,22 @@
         </div>
     </section>
 
-    <!-- Student Guidance -->
-    <section id="guidance">
+    <section id="guidance" class="section-padding" style="background: #f8f9fa;">
         <div class="container">
-            <div class="section-title">
-                <h2>طلبہ رہنمائی</h2>
-            </div>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <i class="fas fa-graduation-cap"></i>
+            <h2 style="text-align: center; margin-bottom: 40px;">طلبہ رہنمائی</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <i class="fas fa-graduation-cap book-icon"></i>
                     <h3>درس نظامی</h3>
                     <p>درس نظامی کے طلبہ کے لیے کتب و مواد کی رہنمائی</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-search"></i>
+                <div class="book-card">
+                    <i class="fas fa-search book-icon"></i>
                     <h3>تحقیقی رہنمائی</h3>
                     <p>مقالہ اور تحقیقی کاموں میں راہنمائی</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-comments"></i>
+                <div class="book-card">
+                    <i class="fas fa-comments book-icon"></i>
                     <h3>مشاورت</h3>
                     <p>دینی مسائل اور تدریسی امور میں مشاورت</p>
                 </div>
@@ -665,13 +694,9 @@
         </div>
     </section>
 
-    <!-- Q&A -->
-    <section id="qa">
+    <section id="qa" class="section-padding">
         <div class="container">
-            <div class="section-title">
-                <h2>سوال و جواب</h2>
-            </div>
-            
+            <h2 style="text-align: center; margin-bottom: 40px;">سوال و جواب</h2>
             <div class="form-container">
                 <form id="questionForm">
                     <div class="form-group">
@@ -686,31 +711,28 @@
                         <label>سوال</label>
                         <textarea required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fas fa-paper-plane"></i> سوال ارسال کریں</button>
+                    <button type="submit" class="btn" style="width: 100%;"><i class="fas fa-paper-plane"></i> سوال ارسال کریں</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
+    <section id="contact" class="section-padding" style="background: var(--dark); color: white;">
         <div class="container">
-            <div class="section-title">
-                <h2>رابطہ کریں</h2>
-            </div>
+            <h2 style="text-align: center; color: white; margin-bottom: 40px;">رابطہ کریں</h2>
             
             <div class="contact-grid">
-                <div class="contact-card">
+                <div class="contact-card" style="background: rgba(255,255,255,0.1); color: white;">
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>پتہ</h3>
-                    <p>شیرانی کالونی، ضلع پشین، بلوچستان</p>
+                    <p>شیرانی کالونی، کیڈٹ کالج روڈ، ضلع پشین، بلوچستان</p>
                 </div>
-                <div class="contact-card">
+                <div class="contact-card" style="background: rgba(255,255,255,0.1); color: white;">
                     <i class="fas fa-phone-alt"></i>
                     <h3>فون</h3>
                     <p>+92 300 1234567</p>
                 </div>
-                <div class="contact-card">
+                <div class="contact-card" style="background: rgba(255,255,255,0.1); color: white;">
                     <i class="fas fa-envelope"></i>
                     <h3>ای میل</h3>
                     <p>info@muftisuhail.com</p>
@@ -718,29 +740,44 @@
             </div>
             
             <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="social-link" style="background: var(--secondary);"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link" style="background: var(--secondary);"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link" style="background: var(--secondary);"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link" style="background: var(--secondary);"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2025 مفتی محمد سہیل خان شیرانی۔ تمام حقوق محفوظ ہیں۔</p>
+            <p>&copy; 2025 مفتی محمد سہیل خان شیرانی۔ تمام حقوق محفوظ ہیں۔</p>
+            <p style="margin-top: 1rem;"><i class="fas fa-heart" style="color: var(--secondary);"></i> دین کی خدمت کے لیے وقف</p>
         </div>
     </footer>
 
-    <!-- Simple JavaScript -->
     <script>
         // Mobile Menu
-        document.getElementById('menuBtn').addEventListener('click', function() {
-            document.getElementById('navLinks').classList.toggle('active');
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
         });
 
-        // Form Submit
+        // Tab functionality
+        function openTab(tabName) {
+            var tabs = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            var btns = document.getElementsByClassName('tab-btn');
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Form submit
         document.getElementById('questionForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('آپ کا سوال موصول ہو گیا ہے۔');
@@ -750,7 +787,7 @@
         // Close menu when link clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function() {
-                document.getElementById('navLinks').classList.remove('active');
+                document.getElementById('nav-links').classList.remove('active');
             });
         });
     </script>
