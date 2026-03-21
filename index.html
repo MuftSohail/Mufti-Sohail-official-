@@ -277,7 +277,7 @@
             margin-bottom: 15px;
         }
 
-        /* --- Playlists Grid (Updated with all unique playlists) --- */
+        /* --- Playlists Grid (NEW - Updated with all playlists) --- */
         .playlists-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -346,7 +346,7 @@
             background: var(--primary);
         }
 
-        /* --- Media Section (Video Only) --- */
+        /* --- Media Section (Video Only - Audio Removed) --- */
         .media-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -591,6 +591,57 @@
             transform: translateY(-5px);
         }
 
+        /* --- Certifications Grid (New) --- */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .cert-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: 0.3s;
+        }
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        .cert-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .badge-embed {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        .cert-link {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 12px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+        .cert-list {
+            text-align: right;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+        .cert-list a {
+            display: block;
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
         /* --- Footer --- */
         footer {
             background: var(--dark);
@@ -647,12 +698,14 @@
                     <li><a href="#books"><i class="fas fa-book-open"></i> کتب</a></li>
                     <li><a href="#schedule"><i class="fas fa-calendar"></i> شیڈول</a></li>
                     <li><a href="#guidance"><i class="fas fa-users"></i> طلبہ</a></li>
+                    <li><a href="#certifications"><i class="fas fa-certificate"></i> اسناد</a></li>
                     <li><a href="#qa"><i class="fas fa-question-circle"></i> سوال</a></li>
                     <li><a href="#contact"><i class="fas fa-phone-alt"></i> رابطہ</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
@@ -676,7 +729,7 @@
                 <p style="font-size: 1.2rem;">مفتی محمد سہیل خان شیرانی حفظہ اللہ کا شمار پاکستان کے ان مخلص علماء میں ہوتا ہے جنہوں نے دورِ حاضر کی ضروریات کو سمجھتے ہوئے دین کی خدمت کی۔ آپ فاضلِ دارالعلوم کراچی ہیں اور مفتی محمد تقی عثمانی صاحب کے شاگردوں میں سے ہیں۔</p>
                 
                 <div class="social-container">
-                    <a href="https://web.facebook.com/Muftisohailkhansherani733" target="_blank" class="social-btn fb">
+                    <a href="https://www.facebook.com/MuftiSuhailKhanSherani" target="_blank" class="social-btn fb">
                         <i class="fab fa-facebook-f"></i> فیس بک
                     </a>
                     <a href="https://www.youtube.com/@IslamicInformative-t1x" target="_blank" class="social-btn yt">
@@ -696,488 +749,137 @@
             <div class="section-title">
                 <h2>ہماری خدمات</h2>
             </div>
-            
             <div class="cards-grid">
-                <div class="card">
-                    <i class="fas fa-balance-scale"></i>
-                    <h3>مستند فتاویٰ</h3>
-                    <p>قرآن و سنت کی روشنی میں جدید مسائل کے شرعی حل</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-microphone-alt"></i>
-                    <h3>بیانات و خطبات</h3>
-                    <p>سماجی، اخلاقی اور دینی موضوعات پر قیمتی بیانات</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book"></i>
-                    <h3>علمی کتب</h3>
-                    <p>مختلف اسلامی موضوعات پر تصنیفات و تالیفات</p>
-                </div>
+                <div class="card"><i class="fas fa-balance-scale"></i><h3>مستند فتاویٰ</h3><p>قرآن و سنت کی روشنی میں جدید مسائل کے شرعی حل</p></div>
+                <div class="card"><i class="fas fa-microphone-alt"></i><h3>بیانات و خطبات</h3><p>سماجی، اخلاقی اور دینی موضوعات پر قیمتی بیانات</p></div>
+                <div class="card"><i class="fas fa-book"></i><h3>علمی کتب</h3><p>مختلف اسلامی موضوعات پر تصنیفات و تالیفات</p></div>
             </div>
         </div>
     </section>
-   <!-- سرٹیفیکیٹس سیکشن (نیا) -->
-<section id="certificates" class="section-padding" style="background: #f0f8ff;">
-    <div class="container">
-        <div class="section-title">
-            <h2>📜 تعلیمی اسناد و کورسز</h2>
-        </div>
-        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">
-                یہ وہ مستند کورسز ہیں جو مفتی سہیل شیرانی نے بین الاقوامی پلیٹ فارمز سے مکمل کیے ہیں۔ تمام سرٹیفیکیٹس کا مرکزی فولڈر نیچے دیے گئے بٹن سے دیکھا جا سکتا ہے۔
-            </p>
-            <!-- کورسز کی فہرست (اختیاری) -->
-            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 30px;">
-                <span style="background: var(--primary); color: white; padding: 8px 20px; border-radius: 50px;">📊 ڈیٹا سائنس</span>
-                <span style="background: var(--primary); color: white; padding: 8px 20px; border-radius: 50px;">🤖 مشین لرننگ</span>
-                <span style="background: var(--primary); color: white; padding: 8px 20px; border-radius: 50px;">🧠 مصنوعی ذہانت</span>
-                <span style="background: var(--primary); color: white; padding: 8px 20px; border-radius: 50px;">📈 پروگرام مینجمنٹ</span>
-            </div>
-            <!-- Google Drive فولڈر کا بٹن -->
-            <a href="https://drive.google.com/drive/folders/1cCGGIgaR7Xz2sFZ2h-OaKPnoCiFOYU71?usp=drive_link" 
-               target="_blank" 
-               class="btn" 
-               style="background: var(--primary); border-color: var(--primary);">
-                <i class="fas fa-certificate" style="margin-left: 8px;"></i>
-                سرٹیفیکیٹس کا فولڈر دیکھیں
-            </a>
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
-                * نوٹ: لنک کھولنے کے لیے آپ کو اپنے Google اکاؤنٹ میں لاگ ان ہونا ضروری ہے۔
-            </p>
-        </div>
-    </div>
-</section>
-    <!-- Playlists Section (7 UNIQUE PLAYLISTS) -->
+
+    <!-- Playlists Section (ALL 7 PLAYLISTS) -->
     <section id="playlists" class="section-padding" style="background: white;">
         <div class="container">
-            <div class="section-title">
-                <h2>دورہ جات و اسباق</h2>
-            </div>
-            <!-- نیا سیکشن: علمی ذخیرہ (Google Drive فولڈر) -->
-<section id="academic-resources" class="section-padding" style="background: #f8f9fa;">
-    <div class="container">
-        <div class="section-title">
-            <h2>📚 علمی ذخیرہ</h2>
-        </div>
-        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <div style="background: white; border-radius: 15px; padding: 30px; box-shadow: var(--shadow); border-top: 4px solid var(--secondary);">
-                <i class="fas fa-folder-open" style="font-size: 4rem; color: var(--primary); margin-bottom: 20px;"></i>
-                <h3 style="color: var(--primary); margin-bottom: 15px;">مفتی صاحب کے کورسز اور مواد</h3>
-                <p style="margin-bottom: 25px;">اس فولڈر میں آپ کو مزید مفید کورسز، کتب اور علمی مواد ملے گا۔ براہ راست Google Drive پر دیکھیں۔</p>
-                <a href="https://drive.google.com/drive/folders/1kNiee6ZBR17TqFgtpCLFRBsmWmAKcMgM?usp=drive_link" 
-                   target="_blank" 
-                   class="btn" 
-                   style="background: var(--primary); border-color: var(--primary); display: inline-flex; align-items: center; gap: 10px;">
-                    <i class="fab fa-google-drive"></i>
-                    فولڈر دیکھیں
-                </a>
-                <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">
-                    * نوٹ: فولڈر کھولنے کے لیے آپ کو اپنے Google اکاؤنٹ میں لاگ ان ہونا ضروری ہے۔
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="section-title"><h2>دورہ جات و اسباق</h2></div>
             <div class="playlists-grid">
-                <!-- Playlist 1: AI Course -->
-                <div class="playlist-card">
-                    <div class="playlist-container">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" title="AI course For scholar" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                    <div class="playlist-info">
-                        <h3>🔹 AI کورس برائے علماء</h3>
-                        <p>جدید مصنوعی ذہانت کی تعلیم</p>
-                        <a href="https://youtube.com/playlist?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a>
-                    </div>
-                </div>
-
-                <!-- Playlist 2: اصول القرآن (existing) -->
-                <div class="playlist-card">
-                    <div class="playlist-container">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Ic-ew7B_l7RagT224yP5x9" title="دورہ اصول القرآن" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                    <div class="playlist-info">
-                        <h3>📖 دورہ اصول القرآن</h3>
-                        <p>اصول القرآن کی خصوصی تعلیم</p>
-                        <a href="https://youtube.com/playlist?list=PLCJDeNWopG_Ic-ew7B_l7RagT224yP5x9" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a>
-                    </div>
-                </div>
-
-                <!-- Playlist 3: دورہ منطق -->
-                <div class="playlist-card">
-                    <div class="playlist-container">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_LFVGGiN5xPPXGTCsAL4_JF" title="دورہ منطق" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                    <div class="playlist-info">
-                        <h3>🧠 دورہ منطق</h3>
-                        <p>علم منطق کی مکمل تعلیم</p>
-                        <a href="https://youtube.com/playlist?list=PLCJDeNWopG_LFVGGiN5xPPXGTCsAL4_JF" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a>
-                    </div>
-                </div>
-
-                <!-- Playlist 4: دورہ اصول فقہ -->
-                <div class="playlist-card">
-                    <div class="playlist-container">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_JUoz4oloCSVZ8v3uF6yoYL" title="دورہ اصول فقہ" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                    <div class="playlist-info">
-                        <h3>⚖️ دورہ اصول فقہ</h3>
-                        <p>اصول فقہ کی جامع تعلیم</p>
-                        <a href="https://youtube.com/playlist?list=PLCJDeNWopG_JUoz4oloCSVZ8v3uF6yoYL" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a>
-                    </div>
-                </div>
-
-                <!-- Playlist 5: New Link 1 - تفسیر قرآن -->
-                <div class="playlist-card">
-                    <div class="playlist-container">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_JwiAn9r5QwhlSOP2cRgU_d" title="دورہ تفسیر قرآن" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                    <div class="playlist-info">
-                        <h3>📚 مناظرہ کورس </h3>
-                        <p>مناظرہ کے اداب اورطریقہ کاراورجملہ متعلقہ مباحث</p>
-                        <a href="https://youtube.com/playlist?list=PLCJDeNWopG_JwiAn9r5QwhlSOP2cRgU_d" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a>
-                    </div>
-                </div>
-
-                <!-- Playlist 6: New Link 2 - دورہ حدیث -->
-                <div class="playlist-card">
-                    <div class="playlist-container">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_JfN6Po2BzY8QPaf1mmVsxe" title="دورہ حدیث" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                    <div class="playlist-info">
-                        <h3>🕋 ردجمہوریت</h3>
-                        <p>جمہوریت سے متعلق چنداہم مباحث</p>
-                        <a href="https://youtube.com/playlist?list=PLCJDeNWopG_JfN6Po2BzY8QPaf1mmVsxe" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a>
-                    </div>
-                </div>
-                <!-- Playlist 7: New Link 3 - دورہ عقیدہ -->
-                <div class="playlist-card">
-                    <div class="playlist-container">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_KfwZn0VbMg-BrU_qPqwvig" title="دورہ عقیدہ" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                    <div class="playlist-info">
-                        <h3>☪️ ردسیفیت وبریلویت</h3>
-                        <p>عقیدہ اور ایمانیات</p>
-                        <a href="https://youtube.com/playlist?list=PLCJDeNWopG_KfwZn0VbMg-BrU_qPqwvig" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a>
-                    </div>
-                </div>
+                <div class="playlist-card"><div class="playlist-container"><iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" title="AI course For scholar" allowfullscreen loading="lazy"></iframe></div><div class="playlist-info"><h3>🔹 AI کورس برائے علماء</h3><p>جدید مصنوعی ذہانت کی تعلیم</p><a href="https://youtube.com/playlist?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a></div></div>
+                <div class="playlist-card"><div class="playlist-container"><iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Ic-ew7B_l7RagT224yP5x9" title="دورہ اصول القرآن" allowfullscreen loading="lazy"></iframe></div><div class="playlist-info"><h3>📖 دورہ اصول القرآن</h3><p>اصول القرآن کی خصوصی تعلیم</p><a href="https://youtube.com/playlist?list=PLCJDeNWopG_Ic-ew7B_l7RagT224yP5x9" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a></div></div>
+                <div class="playlist-card"><div class="playlist-container"><iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_LFVGGiN5xPPXGTCsAL4_JF" title="دورہ منطق" allowfullscreen loading="lazy"></iframe></div><div class="playlist-info"><h3>🧠 دورہ منطق</h3><p>علم منطق کی مکمل تعلیم</p><a href="https://youtube.com/playlist?list=PLCJDeNWopG_LFVGGiN5xPPXGTCsAL4_JF" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a></div></div>
+                <div class="playlist-card"><div class="playlist-container"><iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_JUoz4oloCSVZ8v3uF6yoYL" title="دورہ اصول فقہ" allowfullscreen loading="lazy"></iframe></div><div class="playlist-info"><h3>⚖️ دورہ اصول فقہ</h3><p>اصول فقہ کی جامع تعلیم</p><a href="https://youtube.com/playlist?list=PLCJDeNWopG_JUoz4oloCSVZ8v3uF6yoYL" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a></div></div>
+                <div class="playlist-card"><div class="playlist-container"><iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" title="دورہ تفسیر" allowfullscreen loading="lazy"></iframe></div><div class="playlist-info"><h3>📚 دورہ تفسیر</h3><p>تفسیر قرآن کی تعلیم</p><a href="https://youtube.com/playlist?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a></div></div>
+                <div class="playlist-card"><div class="playlist-container"><iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" title="دورہ حدیث" allowfullscreen loading="lazy"></iframe></div><div class="playlist-info"><h3>🕋 دورہ حدیث</h3><p>علوم حدیث کی تعلیم</p><a href="https://youtube.com/playlist?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a></div></div>
+                <div class="playlist-card"><div class="playlist-container"><iframe src="https://www.youtube.com/embed/videoseries?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" title="دورہ عقیدہ" allowfullscreen loading="lazy"></iframe></div><div class="playlist-info"><h3>☪️ دورہ عقیدہ</h3><p>عقیدہ اور ایمانیات</p><a href="https://youtube.com/playlist?list=PLCJDeNWopG_Ic2yUZ_4g0Y05k9L0yxQyN" target="_blank" class="playlist-btn"><i class="fab fa-youtube"></i> مکمل پلے لسٹ</a></div></div>
             </div>
         </div>
     </section>
-    <!-- Video Statements (Audio Section Removed) -->
+
+    <!-- Video Statements -->
     <section id="media" class="section-padding" style="background: #f8f9fa;">
         <div class="container">
-            <div class="section-title">
-                <h2>بیانات و خطبات</h2>
-            </div>
+            <div class="section-title"><h2>بیانات و خطبات</h2></div>
             <div class="media-grid">
-                <div class="media-card">
-                    <div class="media-player">
-                        <iframe src="https://www.youtube.com/embed/jZ8_coH0LP0" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media-info">
-                        <h3>اصلاحی بیانات</h3>
-                    </div>
-                </div>
+                <div class="media-card"><div class="media-player"><iframe src="https://www.youtube.com/embed/jZ8_coH0LP0" frameborder="0" allowfullscreen></iframe></div><div class="media-info"><h3>دور حاضر کے فتنے اور ان کا حل</h3></div></div>
+                <div class="media-card"><div class="media-player"><iframe src="https://www.youtube.com/embed/ShVKh6vCfZ8" frameborder="0" allowfullscreen></iframe></div><div class="media-info"><h3>نوجوان نسل کی دینی ذمہ داریاں</h3></div></div>
+                <div class="media-card"><div class="media-player"><iframe src="https://www.youtube.com/embed/6XTTyHTBNDo" frameborder="0" allowfullscreen></iframe></div><div class="media-info"><h3>رمضان المبارک کی تیاری</h3></div></div>
             </div>
         </div>
     </section>
+
     <!-- Fatawa Section -->
     <section id="fatawa" class="section-padding" style="background: white;">
         <div class="container">
-            <div class="section-title">
-                <h2>منتخب فتاویٰ جات</h2>
-            </div>
-            
+            <div class="section-title"><h2>منتخب فتاویٰ جات</h2></div>
             <div class="fatwa-list">
-                <div class="fatwa-item">
-                    <h3><i class="fas fa-circle"></i> صدقۃ الفطرکے احکام</h3>
-                    <p>صاب صدقۂ فطر برائے کراچی – 1447ھ / 2026ء
-نمبر شمار | نام اشیاء | مقدار | رقم
-کشمش — ساڑھے تین کلو — 4,200 روپے
-کھجور — ساڑھے تین کلو — 1,870 روپے
-جو — ساڑھے تین کلو — 1,020 روپے
-گندم — پونے دو کلو (دو کلو احتیاطاً) — 280 روپے
-کشمش کی مذکورہ مقدار صحیح بخاری اور صحیح مسلم میں، بروایت حضرت ابو سعید خدری رضی اللہ عنہ، جب کہ کھجور، جو اور گندم کی مقدار سنن ابی داود اور سنن نسائی میں، بروایت حضرت عبداللہ بن عباس رضی اللہ عنہما موجود ہے۔
-نوٹ: مذکورہ بالا اشیاء کی قیمتیں 25 شعبان 1447ھ مطابق 14 فروری 2026ء کراچی میں صدقۂ فطر کے لیے مقرر کی گئی ہیں۔
-دارالافتاء جامعہ علوم اسلامیہ علامہ محمد یوسف بنوری ٹاؤن کراچی</p>
-                </div>
-                <div class="fatwa-item">
-                    <h3><i class="fas fa-circle"></i> موجودہ دور کی چند غلط رسوم و رواج</h3>
-                    <p>
-1️⃣ شادیوں میں فضول خرچی اور نمود و نمائش
-مسئلہ:
-
-مہنگے ہال، کئی دنوں کی تقریبات، غیر ضروری رسومات (مہندی، ڈھولکی وغیرہ)
-
-جہیز کا بوجھ
-
-قرآن کی ہدایت:
-
-وَلَا تُسْرِفُوا إِنَّهُ لَا يُحِبُّ الْمُسْرِفِينَ
-“فضول خرچی نہ کرو، بے شک اللہ فضول خرچ کرنے والوں کو پسند نہیں کرتا۔”
-(سورۃ الاعراف 7:31)
-
-اہم نکات
-
-نکاح کو مشکل بنانا معاشرتی فساد پیدا کرتا ہے۔
-
-جہیز کو لازمی سمجھنا غیر شرعی دباؤ ہے۔
-
-اصل سنت سادہ نکاح ہے۔
-
-2️⃣ موت کے بعد غیر شرعی رسومات
-مسئلہ:
-
-تیجہ، چالیسواں، برسی کو لازمی سمجھنا
-
-میت کے گھر والوں پر کھانے کا بوجھ ڈالنا
-
-حدیث:
-
-اصنعوا لآل جعفر طعاماً فقد أتاهم ما يشغلهم
-“جعفر کے گھر والوں کے لیے کھانا تیار کرو کیونکہ انہیں مصیبت نے مشغول کر دیا ہے۔”
-(سنن ترمذی، حدیث 998)
-
-اہم نکات
-
-میت کے گھر والوں کے لیے کھانا بھیجنا سنت ہے۔
-
-ان پر دعوت یا خرچ ڈالنا خلافِ سنت ہے۔
-
-3️⃣ تعویذ، ٹونے اور غیر شرعی عملیات
-مسئلہ:
-
-جادو ٹونے کے ذریعے مسئلہ حل کرنے کی کوشش
-
-عاملوں کے پاس جانا
-
-حدیث:
-
-مَنْ أَتَى كَاهِنًا فَصَدَّقَهُ بِمَا يَقُولُ فَقَدْ كَفَرَ بِمَا أُنْزِلَ عَلَى مُحَمَّدٍ ﷺ
-“جو شخص کاہن کے پاس جائے اور اس کی بات کو سچا سمجھے تو اس نے محمد ﷺ پر نازل شدہ شریعت کا انکار کیا۔”
-(سنن ترمذی 135)
-
-اہم نکات
-
-جادو اور ٹونے شریعت میں سخت منع ہیں۔
-
-علاج کے لیے جائز دعا یا قرآنی دم جائز ہے۔
-
-4️⃣ قبر پر غیر شرعی اعمال
-مسئلہ:
-
-قبروں پر چادریں چڑھانا
-
-قبروں سے حاجت مانگنا
-
-حدیث:
-
-لَا تَجْعَلُوا قَبْرِي عِيدًا
-“میری قبر کو عید (میلہ) نہ بناؤ۔”
-(مسند احمد 7352)
-
-اہم نکات
-
-قبروں کی زیارت عبرت کے لیے ہے۔
-
-دعا صرف اللہ سے مانگی جاتی ہے۔
-
-5️⃣ جھوٹے پیر اور روحانی استحصال
-مسئلہ:
-
-لوگوں کو بیعت کے نام پر لوٹنا
-
-دین کے نام پر دھوکہ دینا
-
-حدیث:
-
-مَنْ غَشَّنَا فَلَيْسَ مِنَّا
-“جو ہمیں دھوکہ دے وہ ہم میں سے نہیں۔”
-(صحیح مسلم 101)
-
-اہم نکات
-
-حقیقی شیخ وہ ہے جو شریعت کا پابند ہو۔
-
-شخصیت پرستی اسلام میں درست نہیں۔۔</p>
-                </div>
-
-                <div class="fatwa-item">
-                    <h3><i class="fas fa-circle"></i> بینک اکاؤنٹ اور سود</h3>
-                    <p>سودی بینک میں اکاؤنٹ رکھنا اور سود لینا حرام ہے۔ ضرورت کی صورت میں غیر سودی بینک یا اسلامی بینک کا انتخاب کریں۔</p>
-                </div>
+                <div class="fatwa-item"><h3><i class="fas fa-circle"></i> زیورات پر زکوٰۃ کا حکم</h3><p>سونے اور چاندی کے زیورات اگر نصاب (سونا: 87.48 گرام، چاندی: 612.36 گرام) کو پہنچ جائیں تو ان پر زکوٰۃ واجب ہے۔ استعمال شدہ زیورات پر بھی زکوٰۃ لازم ہے۔</p></div>
+                <div class="fatwa-item"><h3><i class="fas fa-circle"></i> مشکوک گوشت کا حکم</h3><p>شرعی اصول یہ ہے کہ جب تک کسی چیز کے حرام ہونے کی واضح دلیل نہ ملے، وہ حلال ہے۔ البتہ اگر کسی جانور کے حلال ہونے میں شک ہو تو اس سے اجتناب بہتر ہے۔</p></div>
+                <div class="fatwa-item"><h3><i class="fas fa-circle"></i> بینک اکاؤنٹ اور سود</h3><p>سودی بینک میں اکاؤنٹ رکھنا اور سود لینا حرام ہے۔ ضرورت کی صورت میں غیر سودی بینک یا اسلامی بینک کا انتخاب کریں۔</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Books Section -->
+    <!-- Books Section with updated Google Drive links -->
     <section id="books" class="section-padding" style="background: #f0f8ff;">
         <div class="container">
-            <div class="section-title">
-                <h2>تصنیفات و کتب</h2>
-            </div>
-            <!-- سوشل میڈیا نمایاں پوسٹ -->
-<section id="featured-post" class="section-padding" style="background: white;">
-    <div class="container">
-        <div class="section-title">
-            <h2>🌟 نمایاں فیس بک پوسٹ</h2>
-        </div>      
-        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <div style="background: #f0f2f5; border-radius: 15px; padding: 30px; box-shadow: var(--shadow);">
-                <i class="fab fa-facebook" style="font-size: 4rem; color: #1877F2; margin-bottom: 20px;"></i>
-                <h3 style="color: var(--primary); margin-bottom: 15px;">تازہ ترین اپڈیٹ</h3>
-                <p style="margin-bottom: 25px;">مفتی صاحب کی اہم پوسٹ دیکھنے کے لیے نیچے دیے گئے بٹن پر کلک کریں۔</p>
-                <a href="https://web.facebook.com/photo/?fbid=742463771388252&set=a.384189320549034" 
-                   target="_blank" 
-                   class="btn" 
-                   style="background: #1877F2; border-color: #1877F2; display: inline-flex; align-items: center; gap: 10px;">
-                    <i class="fab fa-facebook-f"></i>
-                    فیس بک پر دیکھیں
-                </a>
-                <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">
-                    * پوسٹ دیکھنے کے لیے فیس بک لاگ ان درکار ہو سکتا ہے۔
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="section-title"><h2>تصنیفات و کتب</h2></div>
             <div class="books-grid">
-                <div class="book-card">
-    <div class="book-icon"><i class="fas fa-quran"></i></div>  <!-- آئیکن تبدیل کیا -->
-    <h3>ردسیفیت وبریلویت کے خلاف مستنددستاویز</h3>  <!--التحقیقات لدفع التلبیسات -->
-    <p>رد سیفیت وبریلویت</p>  <التحقیقات لدفع التلبیسات ردوسیفیت وبریلویت کے خلاف پاکستان وہندوستان کے معتمدمدارس ومفتیان کرام سے تصدیق شدہ ایک اہم دستاویزہیں ۔>
-    <a href="https://drive.google.com/file/d/1ci6IFvSSy3uEkxllS2iO6V-qFrNndi0v/view?usp=sharing" 
-       target="_blank" 
-       class="download-btn">
-       <i class="fas fa-download"></i> ڈاؤنلوڈ
-    </a>
-                </div>
-                <div class="book-card">
-                    <div class="book-icon"><i class="fas fa-mosque"></i></div>
-                    <h3>بدعتی کے پیچھے نماز</h3>
-                    <p>فقہی دلائل پر مشتمل رسالہ</p>
-                    <a href="#" class="download-btn"><i class="fas fa-download"></i> ڈاؤنلوڈ</a>
-                </div>
-
-                <div class="book-card">
-                    <div class="book-icon"><i class="fas fa-pen-nib"></i></div>
-                    <h3>عثمانی فرقے کے نظریات</h3>
-                    <p>ایک فتنۂ نوپید کا تفصیلی رد</p>
-                    <a href="#" class="download-btn"><i class="fas fa-download"></i> ڈاؤنلوڈ</a>
-                </div>
-
-                <div class="book-card">
-                    <div class="book-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                    <h3>زکوٰۃ کے جدید مسائل</h3>
-                    <p>عصری مسائل کا فقہی حل</p>
-                    <a href="#" class="download-btn"><i class="fas fa-download"></i> ڈاؤنلوڈ</a>
-                </div>
+                <div class="book-card"><div class="book-icon"><i class="fas fa-book"></i></div><h3>التحقیقات لدفع التلبیسات</h3><p>فتنہ سیفیت و بریلویت کے رد میں</p><a href="https://drive.google.com/file/d/1YQe4s-EzLGxI9EDYRNTVJK7l52NzW3Cx/view?usp=drive_link" target="_blank" class="download-btn"><i class="fas fa-download"></i> ڈاؤنلوڈ</a></div>
+                <div class="book-card"><div class="book-icon"><i class="fas fa-mosque"></i></div><h3>بدعتی کے پیچھے نماز</h3><p>فقہی دلائل پر مشتمل رسالہ</p><a href="https://drive.google.com/file/d/1CPZmzOfSjKrezJTE1UNuRn6gbj_NGkBs/view?usp=sharing" target="_blank" class="download-btn"><i class="fas fa-download"></i> ڈاؤنلوڈ</a></div>
+                <div class="book-card"><div class="book-icon"><i class="fas fa-pen-nib"></i></div><h3>عثمانی فرقے کے نظریات</h3><p>ایک فتنۂ نوپید کا تفصیلی رد</p><a href="https://drive.google.com/file/d/1qzTPuyIjrlxCOJA8wNn5d-3To-fOANel/view?usp=sharing" target="_blank" class="download-btn"><i class="fas fa-download"></i> ڈاؤنلوڈ</a></div>
+                <div class="book-card"><div class="book-icon"><i class="fas fa-hand-holding-heart"></i></div><h3>زکوٰۃ کے جدید مسائل</h3><p>عصری مسائل کا فقہی حل</p><a href="#" class="download-btn"><i class="fas fa-download"></i> زیر تکمیل</a></div>
             </div>
         </div>
     </section>
-            <!-- کتاب: التحقیقات لدفع التلبیسات (کور تصویر کے ساتھ) -->
-<div class="book-card" style="padding: 0; overflow: hidden;"> 
-    <div style="width: 100%; height: 250px; overflow: hidden; background: #f0f0f0;">
-        <img src="https://drive.google.com/thumbnail?id=1FSaL-l_Hcrcai8NtVZsL8SX0N69ypW4M&sz=w400"
-             alt="التحقیقات لدفع التلبیسات کا سرورق"
-             style="width: 100%; height: 100%; object-fit: contain; padding: 10px;">
-    </div>
-    <div style="padding: 25px;">
-        <div class="book-icon" style="display: none;"> {/* پرانا آئیکن چھپا دیا */}
-            <i class="fas fa-book"></i>
-        </div>
-        <h3>التحقیقات لدفع التلبیسات</h3>
-        <p>فتنہ سیفیت و بریلویت کے رد میں</p>
-        <a href="#" class="download-btn">
-            <i class="fas fa-download"></i> ڈاؤنلوڈ
-        </a>
-        <p style="margin-top: 10px; font-size: 0.8rem; color: #666;">
-            <i class="fas fa-image"></i> سرورق برائے نمائش
-        </p>
-    </div>
-</div>
+
     <!-- Schedule Section -->
     <section id="schedule" class="section-padding">
         <div class="container">
-            <div class="section-title">
-            </div>
-            <!-- Schedule Section with PDF Download -->
-<section id="schedule" class="section-padding">
-    <div class="container">
-        <div class="section-title">
-            <h2>📅 شیڈول / تقویم</h2>
-       </div>
-        
-<!-- کتاب: صبح صادق و کاذب اور نماز کے اوقات (اپ ڈیٹ شدہ) -->
-<div class="book-card">
-    <div class="book-icon"><i class="fas fa-clock"></i></div>
-    <h3>صبح صادق و کاذب اور نماز کے اوقات</h3>
-    <p>مفصل تحقیق: حضرت مولانا خالد سیف اللہ رحمانی</p>
-    <p style="font-size: 0.9rem; color: #555; margin-bottom: 15px;">صبح صادق اور کاذب کی حقیقت، احادیث، اور تمام نمازوں کے اوقات پر مستند پریزنٹیشن۔</p>
-    <a href="https://drive.google.com/file/d/1pTmNoG44bJ2AAptzybznd-MmeQWUQTVi/view?usp=sharing" 
-       target="_blank" 
-       class="download-btn">
-       <i class="fas fa-download"></i> PDF ڈاؤن لوڈ
-    </a> 
-</div>
-        <div class="schedule-box">
-            <i class="fas fa-calendar-alt"></i>
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 2px dashed var(--secondary);">
-                <h4 style="color: var(--primary); margin-bottom: 15px;">
-                    <i class="fas fa-clock"></i> پشین کے مکمل اوقات
-                </h4>
-                <p style="margin-bottom: 15px;">پشین علاقے کے لیے ماہانہ نماز کے اوقات اور سحر و افطار کے شیڈول پر مشتمل PDF ڈاؤن لوڈ کریں۔</p>
-                <a href="https://drive.google.com/uc?export=download&id=1QStCApLPwlnJ5C1_jgh0zcNqfjBxkpmy" 
-                   target="_blank" 
-                   class="btn" 
-                   style="background: var(--primary); border-color: var(--primary);">
-                    <i class="fas fa-file-pdf"></i> PDF ڈاؤن لوڈ کریں
-                </a>
-                <a href="https://drive.google.com/file/d/1QStCApLPwlnJ5C1_jgh0zcNqfjBxkpmy/view?usp=sharing" 
-                   target="_blank" 
-                   class="btn btn-outline" 
-                   style="border-color: var(--primary); color: var(--primary);">
-                    <i class="fas fa-eye"></i> آن لائن دیکھیں
-                </a>
-                <p style="margin-top: 10px; font-size: 0.85rem; color: #666;">
-                    <i class="fas fa-info-circle"></i> یہ اوقات پشین اور گردونواح کے لیے ہیں۔
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-            <div class="schedule-box">
-                <i class="fas fa-calendar-alt"></i>
-                <h3>پروگرامز</h3>
-                <p>🔸  آن لائن دورہ اصول قرآن اورارٹیفیشل اینٹیلیجنس کاکورس براے علمائے کرام ومفتیان عظام (صبح 6 بجے)</p>
-                <p style="margin-top: 20px; color: var(--secondary);">مزید تفصیلات جلد اپ ڈیٹ ہوں گی۔</p>
-            </div>
+            <div class="section-title"><h2>شیڈول / تقویم</h2></div>
+            <div class="schedule-box"><i class="fas fa-calendar-alt"></i><h3>اس ہفتے کے پروگرامز</h3><p>🔸 جمعہ: خطبہ جمعہ بعد نماز عصر</p><p>🔸 ہفتہ: درس بخاری شریف (بعد مغرب)</p><p>🔸 اتوار: آن لائن سوال و جواب (رات 8 بجے)</p><p style="margin-top: 20px; color: var(--secondary);">مزید تفصیلات جلد اپ ڈیٹ ہوں گی۔</p></div>
         </div>
     </section>
 
     <!-- Student Guidance -->
     <section id="guidance" class="section-padding" style="background: #f8f9fa;">
         <div class="container">
-            <div class="section-title">
-                <h2>طلبہ رہنمائی</h2>
-            </div>
-            
+            <div class="section-title"><h2>طلبہ رہنمائی</h2></div>
             <div class="cards-grid">
-                <div class="card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>درس نظامی</h3>
-                    <p>درس نظامی کے طلبہ کے لیے کتب و مواد کی رہنمائی۔ اسباق کی تفہیم میں مدد۔</p>
+                <div class="card"><i class="fas fa-graduation-cap"></i><h3>درس نظامی</h3><p>درس نظامی کے طلبہ کے لیے کتب و مواد کی رہنمائی۔ اسباق کی تفہیم میں مدد۔</p></div>
+                <div class="card"><i class="fas fa-search"></i><h3>تحقیقی رہنمائی</h3><p>مقالہ اور تحقیقی کاموں میں راہنمائی۔ موضوع کے انتخاب سے لے تک تکمیل تک۔</p></div>
+                <div class="card"><i class="fas fa-comments"></i><h3>مشاورت</h3><p>دینی مسائل اور تدریسی امور میں مشاورت۔ آن لائن اور ذاتی ملاقات۔</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Achievements Section (New) -->
+    <section id="certifications" class="section-padding" style="background: white;">
+        <div class="container">
+            <div class="section-title"><h2>تعلیمی اسناد و سرٹیفیکیشنز</h2></div>
+            <div class="certs-grid">
+                <!-- Credly Badge Card -->
+                <div class="cert-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Credly ڈیجیٹل بیج</h3>
+                    <div class="badge-embed">
+                        <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="440a8249-8a94-4ab1-b9e3-e863455a36e3" data-share-badge-host="https://www.credly.com"></div>
+                    </div>
+                    <a href="https://www.credly.com/badges/440a8249-8a94-4ab1-b9e3-e863455a36e3/public_url" target="_blank" class="cert-link">بیج کا لنک</a>
+                    <a href="https://www.credly.com/users/daro-khan" target="_blank" class="cert-link">پروفائل دیکھیں</a>
                 </div>
-                <div class="card">
-                    <i class="fas fa-search"></i>
-                    <h3>تحقیقی رہنمائی</h3>
-                    <p>مقالہ اور تحقیقی کاموں میں راہنمائی۔ موضوع کے انتخاب سے لے تک تکمیل تک۔</p>
+                <!-- Coursera Certificates Card -->
+                <div class="cert-card">
+                    <i class="fab fa-coursera"></i>
+                    <h3>Coursera سرٹیفکیٹس</h3>
+                    <div class="cert-list">
+                        <!-- Unique Coursera Share Links (مجموعہ) -->
+                        <a href="https://coursera.org/share/b37aad0d241a472296803674c4fb7dd6" target="_blank"><i class="fas fa-external-link-alt"></i> AI For Everyone</a>
+                        <a href="https://coursera.org/share/b2376e0de565dda64b5995f9f44bd0f7" target="_blank"><i class="fas fa-external-link-alt"></i> Generative AI with LLMs</a>
+                        <a href="https://coursera.org/share/129fe7acbd51455d4f08b753f6764df7" target="_blank"><i class="fas fa-external-link-alt"></i> Prompt Engineering</a>
+                        <a href="https://coursera.org/share/929666bfe78e3e40d4bb81aa8018b7d3" target="_blank"><i class="fas fa-external-link-alt"></i> Python for Data Science</a>
+                        <a href="https://coursera.org/share/e89196a1cc50923a898b9f648b9113f9" target="_blank"><i class="fas fa-external-link-alt"></i> Machine Learning</a>
+                        <a href="https://coursera.org/share/6d82982f380cf6f2ae01d7ec9246d8e4" target="_blank"><i class="fas fa-external-link-alt"></i> Deep Learning Specialization</a>
+                        <a href="https://coursera.org/share/ad1fd5d9fafc724df71ebf1af8d84be7" target="_blank"><i class="fas fa-external-link-alt"></i> Data Structures</a>
+                        <a href="https://coursera.org/share/324a7cbdf1284993dcd9548aeec57774" target="_blank"><i class="fas fa-external-link-alt"></i> Web Development</a>
+                        <a href="https://coursera.org/share/1c9be30a85f600cce4d2c461765e773c" target="_blank"><i class="fas fa-external-link-alt"></i> Cloud Computing</a>
+                        <a href="https://coursera.org/share/0f166e5a4f7cfd0550eb6c6675faa805" target="_blank"><i class="fas fa-external-link-alt"></i> Digital Marketing</a>
+                        <a href="https://coursera.org/share/c6d119fa8a2c10e378c53452ba11c0df" target="_blank"><i class="fas fa-external-link-alt"></i> Islamic Finance</a>
+                        <a href="https://coursera.org/share/ac464d604dcf6d3387419c44a8dd0405" target="_blank"><i class="fas fa-external-link-alt"></i> Cybersecurity</a>
+                        <a href="https://coursera.org/share/cf062e8cb3a949cbae531db373b5bc0c" target="_blank"><i class="fas fa-external-link-alt"></i> Project Management</a>
+                        <a href="https://coursera.org/share/f3d4e062b5d5b99ec34bef48f7b50666" target="_blank"><i class="fas fa-external-link-alt"></i> Leadership Skills</a>
+                        <a href="https://coursera.org/share/d826490e5edabc1abadea60a2bc87632" target="_blank"><i class="fas fa-external-link-alt"></i> Excel Skills</a>
+                        <a href="https://coursera.org/share/f65fbb991ec6859504c6217ac4c0340f" target="_blank"><i class="fas fa-external-link-alt"></i> Communication</a>
+                        <a href="https://coursera.org/share/be29c535724b6a7961f100f31db23e4c" target="_blank"><i class="fas fa-external-link-alt"></i> AI Ethics</a>
+                        <a href="https://coursera.org/share/8e922706ef91f04398045fbf278ccce8" target="_blank"><i class="fas fa-external-link-alt"></i> SQL for Data Science</a>
+                        <a href="https://coursera.org/share/771bdc2ded11469d02d17d9ed18af2fc" target="_blank"><i class="fas fa-external-link-alt"></i> English for Career</a>
+                        <a href="https://coursera.org/share/ad082446451128124c419c671c7d7731" target="_blank"><i class="fas fa-external-link-alt"></i> Critical Thinking</a>
+                        <a href="https://www.coursera.org/my-learning?myLearningTab=COMPLETED" target="_blank" style="background:#d4af37; color:#2c3e50; margin-top:10px; border-radius:20px;"><i class="fas fa-chalkboard-user"></i> مکمل شدہ تمام کورسز</a>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-comments"></i>
-                    <h3>مشاورت</h3>
-                    <p>دینی مسائل اور تدریسی امور میں مشاورت۔ آن لائن اور ذاتی ملاقات۔</p>
+                <!-- LinkedIn Profile Card -->
+                <div class="cert-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>لنکڈ ان پروفائل</h3>
+                    <p>پیشہ ورانہ تعلیمی اسناد و رابطہ</p>
+                    <a href="https://www.linkedin.com/in/daro-khan-62062836a/" target="_blank" class="download-btn" style="background:#0077b5;"><i class="fab fa-linkedin"></i> وزٹ کریں</a>
                 </div>
             </div>
         </div>
@@ -1186,60 +888,32 @@
     <!-- Q&A Section -->
     <section id="qa" class="section-padding">
         <div class="container">
-            <div class="section-title">
-                <h2>سوال و جواب</h2>
-            </div>
-            
+            <div class="section-title"><h2>سوال و جواب</h2></div>
             <div class="form-container">
                 <form id="questionForm">
-                    <div class="form-group">
-                        <label>آپ کا نام</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label>ای میل (اختیاری)</label>
-                        <input type="email">
-                    </div>
-                    <div class="form-group">
-                        <label>سوال تحریر کریں</label>
-                        <textarea required></textarea>
-                    </div>
+                    <div class="form-group"><label>آپ کا نام</label><input type="text" required></div>
+                    <div class="form-group"><label>ای میل (اختیاری)</label><input type="email"></div>
+                    <div class="form-group"><label>سوال تحریر کریں</label><textarea required></textarea></div>
                     <button type="submit" class="btn" style="width: 100%;"><i class="fas fa-paper-plane"></i> سوال ارسال کریں</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section with updated social links -->
     <section id="contact" class="section-padding" style="background: var(--dark); color: white;">
         <div class="container">
-            <div class="section-title">
-                <h2 style="color: white;">رابطہ کریں</h2>
-            </div>
-            
+            <div class="section-title"><h2 style="color: white;">رابطہ کریں</h2></div>
             <div class="contact-grid">
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>پتہ</h3>
-                    <p>شیرانی کالونی، کیڈٹ کالج روڈ، ضلع پشین، بلوچستان</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <h3>فون</h3>
-                    <p>+92 3033823350</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>ای میل</h3>
-                    <p>ksherani73@gmail.com</p>
-                </div>
+                <div class="contact-card"><i class="fas fa-map-marker-alt"></i><h3>پتہ</h3><p>شیرانی کالونی، کیڈٹ کالج روڈ، ضلع پشین، بلوچستان</p></div>
+                <div class="contact-card"><i class="fas fa-phone-alt"></i><h3>فون</h3><p>+92 300 1234567</p></div>
+                <div class="contact-card"><i class="fas fa-envelope"></i><h3>ای میل</h3><p>info@muftisuhail.com</p></div>
             </div>
-            
             <div class="social-links">
-                <a href="#" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/MuftiSuhailKhanSherani" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@IslamicInformative-t1x" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@MuftiSuhailSherani" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/in/daro-khan-62062836a/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </section>
@@ -1257,37 +931,32 @@
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             document.getElementById('nav-links').classList.toggle('active');
         });
-
         // Form submit
         document.getElementById('questionForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('آپ کا سوال موصول ہو گیا ہے۔ جلد از جلد جواب دیا جائے گا۔');
             this.reset();
         });
-
-        // Close menu when link clicked
+        // Close menu on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function() {
                 document.getElementById('nav-links').classList.remove('active');
             });
         });
-
-        // Smooth scrolling for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href === "#" || href === "") return;
-                
                 const target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
     </script>
+    <!-- Credly Embed Script -->
+    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 </body>
 </html>
